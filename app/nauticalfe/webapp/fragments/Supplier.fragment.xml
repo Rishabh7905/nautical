@@ -8,7 +8,7 @@ xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
         search="onValueHelpSearchmat"
         confirm="onValueHelpClosemat"
         cancel="onValueHelpClosemat"
-        contentWidth="50%"
+        contentWidth="60%"
         contentHeight="65%"
         titleAlignment="Center"
         items="">
@@ -40,12 +40,14 @@ xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
                         <Label text="Vendor"></Label>
                         <Input  width="100px"></Input>
                         <Label text="Delition Flag"></Label>
-                        <Input width="100px" required="true" showValueHelp="true" valueHelpRequest="" ></Input>
+                        <Input id="delitionSupplier" width="100px" required="true" showValueHelp="true" valueHelpRequest="delitionSupplierDialog" ></Input>
                         <Label text="Maximum No Of Hits"></Label>
                         <Input  width="100px"></Input>
- 
+
             </form:SimpleForm>
                     <Button text="Close" type="Reject" press="onClose" class="closeBtn"></Button>
+                     <Button text="Ok" type="Reject" press="onOkk" class="okBtn"></Button>
+                     <Button text="Select Multiple" press="showVendorNoDialog2" class="selectBtn"></Button>
                
             </IconTabFilter>
             <IconTabSeparator />
@@ -57,13 +59,13 @@ xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
                 count="{/ProductCollectionStats/Counts/Weight/Heavy}"
                 text="Suppliers by country"
                 key="Heavy" >
- 
-                     <form:SimpleForm  editable="true">
+
+          <form:SimpleForm  editable="true">
             <Label text="Country"></Label>
             <Input id="CountryInp1" required="true" showValueHelp="true" width="100px"  valueHelpRequest="showVendorNoDialog3"></Input>
              <Label text="City"></Label>
               <Input width="100px"></Input>
-               <Label text="Search Term "></Label>
+               <Label text="Search Term__ "></Label>
                         <Input  width="100px" ></Input>
                          <Label text="Name" ></Label>
                         <Input  width="150px" ></Input>
@@ -74,14 +76,14 @@ xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
                         <Input id="CoCd1" width="100px" required="true" showValueHelp="true" valueHelpRequest="showVendorNoDialog5"></Input>
                         <Label text="Maximum No Of Hits"></Label>
                         <Input  width="100px"></Input>
- 
+
             </form:SimpleForm>
- 
+
                    <Button text="Close" type="Reject" press="onClose" class="closeBtn"></Button>
-                 
+                  
                         </IconTabFilter>
                     <IconTabSeparator />
- 
+
             <IconTabFilter
                
                 iconColor="Negative"
@@ -89,9 +91,27 @@ xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
                 text="Suppliers by Company"
                 key="Overweight" >
                    
-            cc
+      <form:SimpleForm  editable="true">
+            <Label text="Search Term"></Label>
+            <Input id="vendor12" required="true" showValueHelp="true" width="100px"  valueHelpRequest="showVendorNoDialog4"></Input>
+             <Label text="Country"></Label>
+              <Input id="CountryCompany" width="100px" required="true" showValueHelp="true"  valueHelpRequest="CountryCompanyDialog"></Input>
+               <Label text="Postal Code"></Label>
+                        <Input  width="100px" ></Input>
+                         <Label text="City" ></Label>
+                        <Input  width="150px" ></Input>
+                        <Label text="Name"></Label>
+                        <Input  width="100px"></Input>
+                        <Label text="Vendor"></Label>
+                        <Input  width="100px"></Input>
+                        <Label text="Delition Flag"></Label>
+                        <Input id="DilitionCompany" width="100px" required="true" showValueHelp="true"   valueHelpRequest="DilitionCompanyDialog" ></Input>
+                        <Label text="Maximum No Of Hits"></Label>
+                        <Input  width="100px"></Input>
+
+            </form:SimpleForm>
                     <Button text="Close" type="Reject" press="onClose" class="closeBtn"></Button>
-                   
+                    
                         </IconTabFilter>
                         <IconTabSeparator />
         </items>

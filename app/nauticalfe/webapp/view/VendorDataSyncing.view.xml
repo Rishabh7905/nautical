@@ -1,83 +1,136 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:cards="sap.f.cards" xmlns:tnt="sap.tnt" controllerName="nauticalfe.controller.VendorDataSyncing"
-xmlns:html="http://www.w3.org/1999/xhtml"
-xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-xmlns="sap.m">
-
-    <Page >
+<mvc:View xmlns:table="sap.ui.table" xmlns:smartmultiedit="sap.ui.comp.smartmultiedit" xmlns:core="sap.ui.core" xmlns:cards="sap.f.cards" xmlns:tnt="sap.tnt" controllerName="nauticalfe.controller.VendorDataSyncing"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    	xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield"
+    
+    >
+       <Page id="_IDGenPage1" >
        <headerContent>
             <!-- Your header content goes here -->
-            <Bar class="customHeader">
+            <Bar id="_IDGenBar2" class="customHeader">
                 <contentLeft>
-                    <core:Icon
+                    <core:Icon id="_IDGenIcon1"
                         src="sap-icon://nav-back"
                         class="size1"
                         color="#FFFFFF"
-                        press="onBackPress"
+                        press="backPress"
                     />
-                    <core:Icon
+                    <core:Icon id="_IDGenIcon2"
                         src="sap-icon://home"
                         class="size1"
                         color="#FFFFFF"
                         press="onBackPressHome"
                     />
-                    <Image
-                        src="./images/ignxlogo.png"
+                    <Image id="_IDGenImage1"
+                        src="../images/ingenxlogo.jpg"
                         height="75%"
                     />
-                    <Text
-                        class="textBid size1"
+                    <Text id="_IDGenText1"
+                        class="textBid"
                         text="Vendor Data Syncing Details"
                     />
                 </contentLeft>
                 <contentRight>
-                    <core:Icon
+                    <core:Icon id="_IDGenIcon3"
                         src="sap-icon://search"
                         class="size1"
                         color="#FFFFFF"
                     >
                         <core:layoutData>
-                            <FlexItemData growFactor="1" />
+                            <FlexItemData id="_IDGenFlexItemData1" growFactor="1" />
                         </core:layoutData>
                     </core:Icon>
-                    <core:Icon
+                    <core:Icon id="_IDGenIcon4"
                         src="sap-icon://SAP-icons-TNT/user"
                         class="size1"
                         color="#FFFFFF"
                     >
                         <core:layoutData>
-                            <FlexItemData growFactor="1" />
+                            <FlexItemData id="_IDGenFlexItemData2" growFactor="1" />
                         </core:layoutData>
                     </core:Icon>
                 </contentRight>
             </Bar>
         </headerContent>
        
-        <Bar id="_IDGenBar1" class="_IDGenBar1">
-            <contentLeft>
-                <Button id="_IDGenButton1" text="Save as Variant"></Button>
-                <Button id="button" icon="sap-icon://slim-arrow-down" iconFirst="false" text="More" ariaHasPopup="Menu" press="onPress"/>
-            </contentLeft>
-            <contentRight>
-                <Button id="_IDGenButton2" text="Exit" press="onExit"></Button>
-            </contentRight>
-        </Bar>
+            <Bar id="_IDGenBar1" class="_IDGenBar1">
+                <contentLeft>
+                    <Button id="_IDGenButton1" text="Save as Variant"></Button>
+                    <Button id="button" icon="sap-icon://slim-arrow-down" iconFirst="false" text="More" ariaHasPopup="Menu" press="onPress"/>
+                </contentLeft>
+                <contentRight>
+                    <Button id="_IDGenButton2" text="Exit" press="onExit"></Button>
+                </contentRight>
+            </Bar>
+            <Text id="EnterDetailsId" text="Enter Details" class="EnterDetailsHeader"></Text>
+            <HBox id="vendorBoxes" alignItems="Center" class="BPdetailsContent">
+                <Label id="vendorNoId" text="Vendor No:" required="true"></Label>
+               
+                <Input id="button1" width="80%" required="true" showValueHelp="true" valueHelpRequest="showVendorNoDialog" />
 
-        <Text id="EnterDetailsId" text="Enter Details" class="vgheading"></Text>
+                <Label id="_IDGenLabel2" text="To:" required="true"></Label>
+               
+                <SearchField id="searchField2" width="60%" search=".onFilterPosts" />
+            </HBox>
+            
+        <Table id="synctable"  visible="false" items="{/LFA1}">
+          <columns>
+           <Column id="heading1" >
+             <Text id="text1" text="Vendor No"/>
+           </Column>
+           <Column id="heading2" >
+             <Text id="text2" text="Title"/>
+           </Column>
+           
+           <Column id="heading4" >
+             <Text id="text4" text="Address"/>
+           </Column>
+           <Column id="heading5" >
+             <Text id="text5" text="Name1"/>
+           </Column>
+           <Column id="heading7" >
+             <Text id="text7" text="Name3"/>
+           </Column>
+           <Column id="heading8" >
+             <Text id="text8" text="Street"/>
+           </Column>
+           <Column id="heading9" >
+             <Text id="text9" text="Postal Code"/>
+           </Column>
+           <Column id="heading10" >
+             <Text id="text10" text="City"/>
+           </Column>
+           <Column id="heading11" >
+             <Text id="text11" text="Country"/>
+           </Column>
+            </columns>
+ 
+          <items>
+           <ColumnListItem id="coloumnlist1">
+             <cells>
+              <Input  value ="{LIFNR}"/>
+              <Input  value ="{ANRED}"/>
+              <Input  value ="{ADRNR}"/>
+              <Input  value ="{NAME1}"/>
+              <Input  value ="{NAME3}"/>
+              <Input  value ="{STRAS}"/>
+              <Input  value ="{PSTLZ}"/>
+              <Input  value ="{ORT01}"/>
+              <Input  value ="{LAND1}"/>
+              <Input  value ="{REGIO}"/>
+             </cells>
+           </ColumnListItem>
+          </items>
+        </Table>
 
-        <HBox id="_IDGenHBox1" alignItems="Center" class="BPdetailsContent">
-            <Label id="_IDGenLabel1" text="Vendor No:" required="true" class="mandatorylabel"></Label>
-            <Input id="searchField" width="150px" showValueHelp="true" valueHelpRequest="showVendorNoDialog"/>
-            <Label id="_IDGenLabel2" text="To:" required="true" class="mandatorylabel"></Label>
-            <Input id="inputfiled2" width="150px" showValueHelp="true" valueHelpRequest="onInput2ValueHelpRequest"/>
-        </HBox>
-
-        <footer>
-            <OverflowToolbar id="_IDGenOverflowToolbar1" design="Solid">
-                <ToolbarSpacer id="_IDGenToolbarSpacer1" />
-                <Button id="_IDGenButton11" text="Execute" type="Negative" icon="none"></Button>
-            </OverflowToolbar>
-        </footer>
+            <footer>
+                <OverflowToolbar id="_IDGenOverflowToolbar1" design="Auto">
+                    <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                    <Button id="_IDGenButton11" text="Execute" press="onExecute"></Button>
+                </OverflowToolbar>
+            </footer>
 
     </Page>
-
 </mvc:View>

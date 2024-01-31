@@ -87,3 +87,34 @@ Content-Type: application/json
 "PORTN": "PCity"
 
 }
+
+###
+GET http://localhost:4004/odata/v4/nautical/Newtable
+
+###
+Post http://localhost:4004/odata/v4/nautical/Newtable
+Content-Type: application/json
+
+ {
+        "LIFNR": "98765432",
+        "ANRED": "Ms.",
+        "ADRNR": "00876543",
+        "NAME1": "Jane Smith",
+        "STREET": "456 Oak Ave",
+        "PSTLZ": "54321",
+        "ORT01": "Bigtown",
+        "LAND1": "US",
+        "REGIO": "CA",
+        "TELF1": "+109876543210",
+        "TELF2": "",
+        "TELFX": "",
+        "ERDAT": "2023-05-20",
+        "SPRAS": "EN",
+        "SMTP_ADNR": "jane@example.com",
+        "DATE_TO": "2024-12-31",
+        "STR_SUPPL1": "Suite 202",
+        "STR_SUPPL2": "",
+        "SORT1": "Oak Avenue",
+        "TIME_ZONE": "GMT-8",
+        "HOUSE_NUM1": "456"
+    }

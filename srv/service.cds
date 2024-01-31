@@ -49,6 +49,7 @@ service Nautical{
     entity VEND_FBID as projection on compare_quotation.VEND_FBID; 
     entity ZPORT as projection on NAUTI_MAS.ZPORT; 
     entity LFA1 as projection on NAUTI_VENDOR.LFA1;
+    entity Newtable as projection on NAUTI_VENDOR.Newtable;
     entity ADR6 as projection on NAUTI_VENDOR.ADR6;
     entity ADRC as projection on NAUTI_VENDOR.ADRC;
 

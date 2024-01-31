@@ -1,0 +1,15 @@
+LIFNR,ANRED,ADRNR,NAME1,NAME2,NAME3,STRAS,PSTLZ,ORT01,LAND1,REGIO,TELF1,TELF2,TELFX,ERDAT,SPRAS
+10001,goods,123 mumbai,rishabh,,tiwari,goregawn,123345,MUM,IN,,7905968276,,,,marathi
+10002,food,13 delhi,ayush,,tiwari,khaogali,208008,DEL,IN,,7905968276,,,,hindi
+10003,cars,1233 gurugram,rishabh,,verma,ramstreet,208007,HR,IN,,7905968276,,,,hindi
+10004,bikes,1234 haidrabad,vaibhav,,tiwari,goregawn,987665,HYD,IN,,7905968276,,,,hindi
+10005,goods,432 mumbai,ashwani,,tiwari,goregawn,98765,MUM,IN,,7905968276,,,,marathi
+10006,cars,23 bhopal,himanshu,,tiwari,goregawn,12004,BP,IN,,7905968276,,,,hindi
+10007,bikes,789 chennai,kapil,,tiwari,goregawn,145008,CHN,IN,,7905968276,,,,marathi
+10008,goods,23 chandigarh,vanshaj,,tiwari,goregawn,12335,CH,IN,,7905968276,,,,hindi
+10009,silver,567 assam,kapil,,verma,goregawn,123345,AS,IN,,7905968276,,,,hindi
+10010,goods,123 delhi,dipanshu,,tiwari,goregawn,123345,DEL,IN,,7905968276,,,,hindi
+10011,silver,2345 gurugram,anurag,,tiwari,goregawn,123345,HR,IN,,7905968276,,,,hindi
+10012,gold,234 delhi,sahil,,tiwari,goregawn,123345,DEL,IN,,7905968276,,,,hindi
+10013,goods,87645mumbai,vedant,,tiwari,goregawn,123345,MUM,IN,,7905968276,,,,marathi
+10014,gold,3456 gurugram,shalini,,tiwari,goregawn,123345,HR,IN,,7905968276,,,,hindi
