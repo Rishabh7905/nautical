@@ -944,7 +944,9 @@
                 <Annotation Term="Common.ValueList">
                     <Record Type="Common.ValueListType">
                         <PropertyValue Property="Label" String="Country/Region" />
-                        <PropertyValue Property="CollectionPath" String="Countries" />
+                        <PropertyValue Property="CollectionPath" String="Countries" >
+                            
+                        </PropertyValue>
                         <PropertyValue Property="Parameters">
                             <Collection>
                                 <Record Type="Common.ValueListParameterInOut">

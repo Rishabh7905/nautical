@@ -9,12 +9,14 @@
     "@sap-cloud-sdk/http-client": "^3.10.0",
     "@sap-cloud-sdk/resilience": "^3.11.0",
     "@sap/cds": "^7",
+    "@sap/cds-hana": "^2.0.0",
     "express": "^4",
     "nodemailer": "^6.9.8"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
     "@sap/ux-specification": "^1.120.1"
+
   },
   "scripts": {
     "start": "cds-serve",

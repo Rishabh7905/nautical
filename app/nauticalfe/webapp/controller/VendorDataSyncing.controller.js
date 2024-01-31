@@ -267,6 +267,8 @@ sap.ui.define(
                                 this.populateInputField(inputVoyageType, oSelectedValue);
                                 var button1Input = this.getView().byId("button1");
                                 this.populateInputField(button1Input, oSelectedValue);
+
+
                             }
                             oDialog.close();
                         }.bind(this),
