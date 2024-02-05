@@ -116,7 +116,7 @@ sap.ui.define(
                 console.log("UpdateSync ", updateSync);
                 var updateSynModel = new JSONModel();
                 updateSynModel.setData(updateSync);
-                this.getView().setModel(updateSynModel,"nomination")
+                this.getView().setModel(updateSynModel, "nomination")
                 let oData = this.getView().getModel('nomination').getData()
                 let salesModel = this.getOwnerComponent().getModel()
                 let oBindList = salesModel.bindList("/Newtable");
@@ -132,7 +132,7 @@ sap.ui.define(
                         // MessageBox.success('Error.')
                     },
                 })
-            
+
                 console.log(selecteVendorNo, typeof selecteVendorNo);
                 if (!selecteVendorNo) {
                     console.log(selecteVendorNo);
@@ -261,7 +261,7 @@ sap.ui.define(
                                 selectedData.push(oSelectedItem.getCells()[13].getText());
                                 selectedData.push(oSelectedItem.getCells()[14].getText());
                                 selectedData.push(oSelectedItem.getCells()[15].getText());
-                                
+
                                 console.log(selectedData);
                                 var inputVoyageType = this.getView().byId(oData.getId()); // Input field for Voyage Type
                                 this.populateInputField(inputVoyageType, oSelectedValue);

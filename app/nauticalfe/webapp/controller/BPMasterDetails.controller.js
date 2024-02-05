@@ -63,7 +63,7 @@ sap.ui.define(
                     liveChange: function (oEvent) {
                       var sSearchTerm = oEvent.getParameter("newValue");
                       var oBinding = oValueHelpTable.getBinding("items");
-                      var aFilters = [];   
+                      var aFilters = [];                              
                       if (sSearchTerm) {
                         aFilters.push(new sap.ui.model.Filter("ORT01", sap.ui.model.FilterOperator.Contains, sSearchTerm));
                         console.log(aFilters, oBinding);
