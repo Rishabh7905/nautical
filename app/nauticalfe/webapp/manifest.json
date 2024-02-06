@@ -24,7 +24,17 @@
           "localUri": "localService/metadata.xml",
           "odataVersion": "4.0"
         }
+      },
+      "mainService1": {
+        "uri": "/odata/v4/nautical/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "4.0"
+        }
       }
+    
     }
   },
   "sap.ui": {
@@ -83,7 +93,19 @@
           "autoExpandSelect": true,
           "earlyRequests": true
         }
+      },
+      "northwind": {
+        "dataSource": "mainService1",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
       }
+
+      
     },
     "resources": {
       "css": [

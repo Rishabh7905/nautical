@@ -16,7 +16,7 @@ xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
         <IconTabBar
         id="idIconTabBar"
         select=".onFilterSelect"
-        class="sapUiResponsiveContentPadding">
+        class="sapUiResponsiveContentPadding" >
         <items>
             <IconTabSeparator />
             <IconTabFilter
@@ -80,6 +80,8 @@ xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
             </form:SimpleForm>
 
                    <Button text="Close" type="Reject" press="onClose" class="closeBtn"></Button>
+                   <Button text="Ok" type="Reject" press="onOkk" class="okBtn"></Button>
+                     <Button text="Select Multiple" press="showVendorNoDialog3" class="selectBtn"></Button>
                   
                         </IconTabFilter>
                     <IconTabSeparator />
@@ -111,6 +113,8 @@ xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
 
             </form:SimpleForm>
                     <Button text="Close" type="Reject" press="onClose" class="closeBtn"></Button>
+                    <Button text="Ok" type="Reject" press="onOkk" class="okBtn"></Button>
+                     <Button text="Select Multiple" press="showVendorNoDialog2" class="selectBtn"></Button>
                     
                         </IconTabFilter>
                         <IconTabSeparator />
@@ -118,6 +122,7 @@ xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
         <content>
            
         </content>
+        
     </IconTabBar>
    
  

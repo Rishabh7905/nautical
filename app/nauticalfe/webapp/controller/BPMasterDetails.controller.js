@@ -8,6 +8,8 @@ sap.ui.define(
     "use strict";
 
     let selectedData = [];
+    let sSelectedIds = [];
+    let sSelectedTableId;
     return BaseController.extend("nauticalfe.controller.BPMasterDetails", {
       onInit() {
       },
@@ -76,6 +78,7 @@ sap.ui.define(
               }),
               new sap.m.Table({
                 mode: sap.m.ListMode.MultiSelect,
+                selectionChange:this.onChange,
                 columns: [
                   new sap.m.Column({
                     header: new sap.m.Text({ text: "vendor no " }),
@@ -140,7 +143,8 @@ sap.ui.define(
               oDialog.close();
           }.bind(this),
           }),
-          beginButton: new sap.m.Button({
+          buttons: [
+           new sap.m.Button({
             text: "Ok",
             type: "Accept",
             press: function () {
@@ -161,19 +165,28 @@ sap.ui.define(
             }
             }.bind(this),
           }),
-          endButton: new sap.m.Button({
+           new sap.m.Button({
             text: "cancel",
             type: "Reject",
             press: function () {
               oDialog.close();
             },
           }),
+          
+            new sap.m.Button({
+                text: "Delete",
+                type: "Reject",
+                press: this.deleteSelectedRows.bind(this),
+                
+            })
+        ]
         });
         
 
         let oValueHelpTable = oDialog.getContent()[0].getItems()[1];
         oValueHelpTable.bindItems({
           path: "/Newtable",
+      
           template: new sap.m.ColumnListItem({
             cells: [
               new sap.m.Text({ text: "{LIFNR}" }),
@@ -193,7 +206,8 @@ sap.ui.define(
               new sap.m.Text({ text: "{ERDAT}" }),
               new sap.m.Text({ text: "{SPRAS}" }),
             ],
-          }),
+          
+        }),
         });
 
         // Bind the dialog to the view
@@ -202,8 +216,59 @@ sap.ui.define(
         // Open the dialog
         oDialog.open();
       },
-
-
+      onChange: function(oEvent) {
+        let oSource = oEvent.getSource();
+        selectedData = oSource.getSelectedItems();
+        console.log(selectedData);
+        
+        sSelectedIds = selectedData.map(function(oSelectedItem) {
+            return oSelectedItem.getId(); // Assuming IDs are stored as the item IDs
+        });
+        sSelectedTableId = oSource.getId();
+    
+        // Call deleteSelectedRows with the selected IDs
+        
+    },
+    
+    deleteSelectedRows: function() {
+        let oTable = this.getView().byId(sSelectedTableId); // Replace "yourTableId" with the actual ID of your table
+    
+        sSelectedIds.forEach(function(sSelectedId) {
+            let oSelectedItem = sap.ui.getCore().byId(sSelectedId);
+            if (oSelectedItem) {
+                oTable.removeItem(oSelectedItem); // Remove the selected item from the table
+            }
+        });
+    
+    },
+      deleteSelectedRows1: function (oEvent) {
+        var oTable = oEvent.getSource(); // Assuming the event source is the table
+        var oModel = oTable.getModel(); // Assuming the table is bound to a model
+    
+        var aSelectedIndices = oTable.getSelectedItem();
+        var aContextsToDelete = [];
+    
+        // Retrieve the contexts of selected items
+        aSelectedIndices.forEach(function (nIndex) {
+            var oContext = oTable.getContextByIndex(nIndex);
+            aContextsToDelete.push(oContext);
+        });
+    
+        // Remove selected items from the model
+        aContextsToDelete.forEach(function (oContext) {
+            oModel.remove(oContext.getPath(), {
+                success: function () {
+                    // Item removed successfully
+                },
+                error: function (oError) {
+                    // Handle error while removing item
+                    console.error("Error while deleting item:", oError);
+                }
+            });
+        });
+    
+        oTable.removeSelections();
+    }
     });
   }
 );

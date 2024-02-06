@@ -100,7 +100,7 @@
             </Column>
         </columns>
 
-            <items>
+            <!-- <items>
             <ColumnListItem id="coloumnlist1">
                 <cells>
                 <Input  value =""/>
@@ -116,7 +116,7 @@
                 <Input  value =""/>
                 </cells>
             </ColumnListItem>
-            </items>
+            </items> -->
     </Table>
 
 
