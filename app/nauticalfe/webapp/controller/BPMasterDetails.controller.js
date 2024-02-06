@@ -7,6 +7,7 @@ sap.ui.define(
   function (BaseController, Fragment, History) {
     "use strict";
 
+    let selectedData = [];
     return BaseController.extend("nauticalfe.controller.BPMasterDetails", {
       onInit() {
       },
@@ -63,7 +64,7 @@ sap.ui.define(
                     liveChange: function (oEvent) {
                       var sSearchTerm = oEvent.getParameter("newValue");
                       var oBinding = oValueHelpTable.getBinding("items");
-                      var aFilters = [];                              
+                      var aFilters = [];   
                       if (sSearchTerm) {
                         aFilters.push(new sap.ui.model.Filter("ORT01", sap.ui.model.FilterOperator.Contains, sSearchTerm));
                         console.log(aFilters, oBinding);
@@ -127,56 +128,50 @@ sap.ui.define(
                 ],
               }),
             ],
+            inputHandleForChange:function(id){
+                 console.log("get id"+id);
+            },
+            selectionChange: function (oEvent) {
+              var oSelectedItem = oEvent.getParameter("listItem");
+              console.log(oSelectedItem);
+              var oSelectedValue = oSelectedItem.getCells()[0].getText(); // Assuming vendor no is in the first column
+              var buttonVendorIdNo = this.getView().byId("vendorIdNo");
+              buttonVendorIdNo.setText(oSelectedValue); // Set the vendor number to the button text
+              oDialog.close();
+          }.bind(this),
           }),
-
           beginButton: new sap.m.Button({
             text: "Ok",
             type: "Accept",
             press: function () {
+              debugger;
               var oTable = oDialog.getContent()[0].getItems()[1];
               var oSelectedItem = oTable.getSelectedItem();
 
               if (oSelectedItem) {
-                var oSelectedValue = oSelectedItem.getCells()[0].getText(); // Adjust index based on your column structure
-                selectedData.push(oSelectedItem.getCells()[0].getText());
-                selectedData.push(oSelectedItem.getCells()[1].getText());
-                selectedData.push(oSelectedItem.getCells()[2].getText());
-                selectedData.push(oSelectedItem.getCells()[3].getText());
-                selectedData.push(oSelectedItem.getCells()[4].getText());
-                selectedData.push(oSelectedItem.getCells()[5].getText());
-                selectedData.push(oSelectedItem.getCells()[6].getText());
-                selectedData.push(oSelectedItem.getCells()[7].getText());
-                selectedData.push(oSelectedItem.getCells()[8].getText());
-                selectedData.push(oSelectedItem.getCells()[9].getText());
-                selectedData.push(oSelectedItem.getCells()[10].getText());
-                selectedData.push(oSelectedItem.getCells()[11].getText());
-                selectedData.push(oSelectedItem.getCells()[12].getText());
-                selectedData.push(oSelectedItem.getCells()[13].getText());
-                selectedData.push(oSelectedItem.getCells()[14].getText());
-                selectedData.push(oSelectedItem.getCells()[15].getText());
-
-                console.log(selectedData);
-                var inputVoyageType = this.getView().byId(oData.getId()); // Input field for Voyage Type
-                this.populateInputField(inputVoyageType, oSelectedValue);
-                var button1Input = this.getView().byId("_IDGenInput1");
-                this.populateInputField(button1Input, oSelectedValue);
-              }
-              oDialog.close();
+                var oSelectedValue = oSelectedItem.getCells()[0].getText(); // Assuming the ID is in the first column
+                // Access the Input field by its ID
+                var inputField = this.getView().byId("BpMasterVendor");
+                // Set its value to the selected ID
+                inputField.setValue(oSelectedValue);
+                // Close the dialog
+                oDialog.close();
+            } else {
+                console.log("No item selected.");
+            }
             }.bind(this),
           }),
           endButton: new sap.m.Button({
-            text: "Cancel",
+            text: "cancel",
             type: "Reject",
             press: function () {
               oDialog.close();
             },
           }),
-
         });
+        
 
         let oValueHelpTable = oDialog.getContent()[0].getItems()[1];
-
-        // Replace with your entity set
         oValueHelpTable.bindItems({
           path: "/Newtable",
           template: new sap.m.ColumnListItem({
