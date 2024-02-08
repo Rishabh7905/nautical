@@ -228,15 +228,19 @@ sap.ui.define(
     
         // Call deleteSelectedRows with the selected IDs
         
-    },
+    }, 
+    deleteSelectedRows: function(aSelecteditems) {
+        // let oTable = this.getView().byId(sSelectedTableId); // Replace "yourTableId" with the actual ID of your table
     
-    deleteSelectedRows: function() {
-        let oTable = this.getView().byId(sSelectedTableId); // Replace "yourTableId" with the actual ID of your table
-    
-        sSelectedIds.forEach(function(sSelectedId) {
-            let oSelectedItem = sap.ui.getCore().byId(sSelectedId);
-            if (oSelectedItem) {
-                oTable.removeItem(oSelectedItem); // Remove the selected item from the table
+        // sSelectedIds.forEach(function(sSelectedId) {
+        //     let oSelectedItem = sap.ui.getCore().byId(sSelectedId);
+        //     if (oSelectedItem) {
+        //         oTable.removeItem(oSelectedItem); // Remove the selected item from the table
+        aSelectedItems.forEach(function(oSelectedItem) {
+          let oParentAggregation = oSelectedItem.getParent();
+          if (oParentAggregation) {
+              oParentAggregation.removeItem(oSelectedItem);
+              
             }
         });
     

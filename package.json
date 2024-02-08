@@ -16,7 +16,6 @@
   "devDependencies": {
     "@cap-js/sqlite": "^1",
     "@sap/ux-specification": "^1.120.1"
-
   },
   "scripts": {
     "start": "cds-serve",
@@ -81,6 +80,16 @@
           "credentials": {
             "destination": "odata_dev",
             "path": "/sap/opu/odata/nauti/NAUTICALCV_SRV"
+          }
+        }
+      },
+      "NAUTIVENDOR_SRV": {
+        "kind": "odata-v2",
+        "model": "srv/external/NAUTIVENDOR_SRV",
+        "[production]": {
+          "credentials": {
+            "destination": "rishabh",
+            "path": "/sap/opu/odata/nauti/VENDOR_SRV"
           }
         }
       }

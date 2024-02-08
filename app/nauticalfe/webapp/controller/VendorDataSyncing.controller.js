@@ -10,13 +10,13 @@ sap.ui.define(
         "sap/ui/core/library",
         "sap/ui/model/Filter",
         "sap/ui/model/FilterOperator",
-        "sap/ui/model/FilterType"
+        "sap/ui/model/FilterType",
+        "sap/ui/model/odata/v2/ODataModel"
     ],
-    function (BaseController, Fragment, History, MessageToast, MenuItem, JSONModel, CoreLibrary, Filter, FilterOperator, FilterType) {
+    function (BaseController, Fragment, History, MessageToast, MenuItem, JSONModel, CoreLibrary, Filter, FilterOperator, FilterType ,ODataModel) {
         "use strict";
         let selectedData = [];
         return BaseController.extend("nauticalfe.controller.VendorDataSyncing", {
-            // _oSupplMenuFragment: null,
             _oMenuFragment: null,
             onInit() {
 
