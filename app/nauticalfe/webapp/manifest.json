@@ -489,6 +489,13 @@
         "target": [
             "TargetTrVoyageApproval"
         ]
+    },
+    {
+        "name": "RouteDisplayVendorDetail",
+        "pattern": "DisplayVendorDetail",
+        "target": [
+            "TargetDisplayVendorDetail"
+        ]
     }
     
 
@@ -503,6 +510,14 @@
               "viewId": "Home",
               "viewName": "Home"
           },
+          "TargetDisplayVendorDetail": {
+            "viewType": "XML",
+            "transition": "slide",
+            "clearControlAggregation": false,
+            "viewId": "DisplayVendorDetail",
+            "viewName": "DisplayVendorDetail"
+        },
+
           "TargetCreateVoyage": {
               "viewType": "XML",
               "transition": "slide",

@@ -2,9 +2,11 @@ sap.ui.define(
   [
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/Fragment",
-    "sap/ui/core/routing/History"
+    "sap/ui/core/routing/History",
+    "sap/m/MessageToast",
+    "sap/ui/model/json/JSONModel"
   ],
-  function (BaseController, Fragment, History) {
+  function (BaseController, Fragment, History, MessageTost,JSONModel) {
     "use strict";
 
     let selectedData = [];
@@ -46,9 +48,14 @@ sap.ui.define(
         const oRouter = this.getOwnerComponent().getRouter();
         oRouter.navTo("RouteSaveAsVariant");
       },
+      onExecute: function () {
+        const oRouter = this.getOwnerComponent().getRouter();
+        oRouter.navTo("RouteDisplayVendorDetail");
+      
+    },
 
 
-
+// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       showBPMasterDialog: function (oEvent) {
         let oData = oEvent.getSource();
 

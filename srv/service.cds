@@ -54,6 +54,7 @@ service Nautical{
     entity ADRC as projection on NAUTI_VENDOR.ADRC;
 
    entity BidTypeSet as projection on NAUTINAUTICALCV_SRV.BidTypeSet;
+    
 
  
     entity ZBTP_NAUTI_CreateVoyage as projection on ZBTP_NAUTI_CREATEVOYAGE_CDS.ZBTP_NAUTI_CreateVoyage

@@ -74,8 +74,8 @@
                
                 <SearchField id="searchField2" width="60%" search=".onFilterPosts" />
             </HBox>
-            
-        <Table id="synctable"  visible="false" items="{/LFA1}">
+       <!-- //table change      -->
+        <Table id="synctable"  visible="false" items="{/xNAUTIxvend_btp}">
           <columns>
            <Column id="heading1" >
              <Text id="text1" text="Vendor No"/>
@@ -110,9 +110,9 @@
           <items>
            <ColumnListItem id="coloumnlist1">
              <cells>
-              <Input  value ="{LIFNR}"/>
-              <Input  value ="{ANRED}"/>
-              <Input  value ="{ADRNR}"/>
+              <Input  value ="{Lifnr}"/>
+              <Input  value ="{Land1}"/>
+              <Input  value ="{Ort01}"/>
               <Input  value ="{NAME1}"/>
               <Input  value ="{NAME3}"/>
               <Input  value ="{STRAS}"/>

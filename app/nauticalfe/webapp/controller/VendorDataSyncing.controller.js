@@ -18,7 +18,28 @@ sap.ui.define(
         let selectedData = [];
         return BaseController.extend("nauticalfe.controller.VendorDataSyncing", {
             _oMenuFragment: null,
+           
+            
+
+
+
             onInit() {
+                var oModel = new JSONModel();
+            this.getView().setModel(oModel, "vendorModel");
+
+            var oDataModel = new ODataModel({
+                serviceUrl: "/NAUTIVENDOR_SRVSampleService", // Assuming this is the correct service URL
+                defaultBindingMode: sap.ui.model.BindingMode.TwoWay
+            });
+
+            oDataModel.read("/VendorDataSet", {
+                success: function(oData) {
+                    oModel.setData(oData.results);
+                },
+                error: function(oError) {
+                    console.error("Error fetching data:", oError);
+                }
+            });
 
             },
             onPress: function () {
@@ -61,7 +82,7 @@ sap.ui.define(
             },
 
             // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            showVendorNoDialog: function () {
+            showVendorNoDialog: function () { 
                 var oView = this.getView();
 
 
@@ -145,7 +166,6 @@ sap.ui.define(
                     oTable.getBinding("items").filter(oFilter, FilterType.Application);
                 }
             },
-
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
             showVendorNoDialog2: function (oEvent) {
                 let oData = oEvent.getSource();
@@ -296,6 +316,7 @@ sap.ui.define(
                             new sap.m.Text({ text: "{TELFX}" }),
                             new sap.m.Text({ text: "{ERDAT}" }),
                             new sap.m.Text({ text: "{SPRAS}" }),
+                             
                         ],
                     }),
                 });

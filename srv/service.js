@@ -14,7 +14,15 @@ module.exports = cds.service.impl(async function (srv) {
     const ZBTP_NAUTICAL_MARIDISTANCE_CDS = await cds.connect.to("ZBTP_NAUTICAL_MARIDISTANCE_CDS"); 
       srv.on('READ', 'ZBTP_NAUTICAL_MariDistance', req => ZBTP_NAUTICAL_MARIDISTANCE_CDS.run(req.query)); 
 
-    const NAUTINAUTICALCV_SRV = await cds.connect.to("NAUTINAUTICALCV_SRV"); 
+      const NAUTINAUTICALCV_SRV = await cds.connect.to("NAUTINAUTICALCV_SRV");
+      srv.on('READ', 'BidTypeSet', req => NAUTINAUTICALCV_SRV.run(req.query));
+      srv.on('READ', 'CarTypeSet', req => NAUTINAUTICALCV_SRV.run(req.query));
+      srv.on('READ', 'CargoUnitSet', req => NAUTINAUTICALCV_SRV.run(req.query));
+      srv.on('READ', 'CurTypeSet', req => NAUTINAUTICALCV_SRV.run(req.query));
+      srv.on('READ', 'GtPlanSet', req => NAUTINAUTICALCV_SRV.run(req.query));
+      srv.on('READ', 'GtTabSet', req => NAUTINAUTICALCV_SRV.run(req.query));
+      srv.on('READ', 'VoyTypeSet', req => NAUTINAUTICALCV_SRV.run(req.query));
+      srv.on('READ', 'ZCalculateSet', req => NAUTINAUTICALCV_SRV.run(req.query));
 
       srv.on('READ', 'BidTypeSet', req => NAUTINAUTICALCV_SRV.run(req.query)); 
 

@@ -46,7 +46,7 @@
             <OverflowToolbar id="_IDGenOverflowToolbar1" design="Solid">
                 <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
             <content>
-                <Button xmlns="sap.m" id="_IDGenButton11" text="Execute" type="Negative" icon="none"/>
+                <Button xmlns="sap.m" id="_IDGenButton11" text="Execute" type="Negative" icon="none" press="onExecute"/>
             </content>
             </OverflowToolbar>
         </footer>
