@@ -1,1098 +1,1286 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
-    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
-        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1" />
-    </edmx:Reference>
-    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
-        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1" />
-    </edmx:Reference>
-    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
-        <edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1" />
-    </edmx:Reference>
-    <edmx:DataServices>
-        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Nautical">
-            <EntityContainer Name="EntityContainer">
-                <EntitySet Name="EPATH" EntityType="Nautical.EPATH" />
-                <EntitySet Name="BP_MAS_DASH" EntityType="Nautical.BP_MAS_DASH">
-                    <NavigationPropertyBinding Path="SPRAS" Target="Languages" />
-                </EntitySet>
-                <EntitySet Name="CLASS" EntityType="Nautical.CLASS" />
-                <EntitySet Name="ZCOUNTRY" EntityType="Nautical.ZCOUNTRY" />
-                <EntitySet Name="ZUSER" EntityType="Nautical.ZUSER" />
-                <EntitySet Name="ZVOY_RELVoyage" EntityType="Nautical.ZVOY_RELVoyage" />
-                <EntitySet Name="ZVOY_RELChartering" EntityType="Nautical.ZVOY_RELChartering" />
-                <EntitySet Name="VOYTYP" EntityType="Nautical.VOYTYP" />
-                <EntitySet Name="BidTYP" EntityType="Nautical.BidTYP" />
-                <EntitySet Name="CARTYP" EntityType="Nautical.CARTYP" />
-                <EntitySet Name="CURR" EntityType="Nautical.CURR" />
-                <EntitySet Name="MAS" EntityType="Nautical.MAS" />
-                <EntitySet Name="NAVOYGUOM" EntityType="Nautical.NAVOYGUOM" />
-                <EntitySet Name="NAVOYGC" EntityType="Nautical.NAVOYGC" />
-                <EntitySet Name="EVENT_MAS" EntityType="Nautical.EVENT_MAS" />
-                <EntitySet Name="REF_DOC_S" EntityType="Nautical.REF_DOC_S" />
-                <EntitySet Name="NAVOYGH" EntityType="Nautical.NAVOYGH" />
-                <EntitySet Name="NAVOYGIP" EntityType="Nautical.NAVOYGIP">
-                    <NavigationPropertyBinding Path="VOYNO" Target="NAVOYGH" />
-                    <NavigationPropertyBinding Path="VOYNM" Target="NAVOYGH" />
-                </EntitySet>
-                <EntitySet Name="NAVOYGCIT" EntityType="Nautical.NAVOYGCIT">
-                    <NavigationPropertyBinding Path="VOYNO" Target="NAVOYGH" />
-                    <NavigationPropertyBinding Path="PROCOST" Target="Currencies" />
-                </EntitySet>
-                <EntitySet Name="VOYAG_APPR" EntityType="Nautical.VOYAG_APPR">
-                    <NavigationPropertyBinding Path="VOYNO" Target="NAVOYGH" />
-                </EntitySet>
-                <EntitySet Name="CHARTREQ" EntityType="Nautical.CHARTREQ">
-                    <NavigationPropertyBinding Path="VOYNM" Target="NAVOYGH" />
-                </EntitySet>
-                <EntitySet Name="ZCHAT_VEN" EntityType="Nautical.ZCHAT_VEN">
-                    <NavigationPropertyBinding Path="VOYNO" Target="NAVOYGH" />
-                </EntitySet>
-                <EntitySet Name="CHAT_APPR" EntityType="Nautical.CHAT_APPR" />
-                <EntitySet Name="VEND_BIDH" EntityType="Nautical.VEND_BIDH">
-                    <NavigationPropertyBinding Path="VOYNO" Target="NAVOYGH" />
-                </EntitySet>
-                <EntitySet Name="VEND_BID" EntityType="Nautical.VEND_BID">
-                    <NavigationPropertyBinding Path="VOYNO" Target="NAVOYGH" />
-                    <NavigationPropertyBinding Path="CVALUE" Target="Currencies" />
-                    <NavigationPropertyBinding Path="CUNIT" Target="Currencies" />
-                </EntitySet>
-                <EntitySet Name="BID_SCORE" EntityType="Nautical.BID_SCORE">
-                    <NavigationPropertyBinding Path="WTAGE" Target="Currencies" />
-                </EntitySet>
-                <EntitySet Name="VEND_FBID" EntityType="Nautical.VEND_FBID">
-                    <NavigationPropertyBinding Path="VOYNO" Target="NAVOYGH" />
-                    <NavigationPropertyBinding Path="CHRNMIN" Target="BID_SCORE" />
-                    <NavigationPropertyBinding Path="CVALUE" Target="Currencies" />
-                    <NavigationPropertyBinding Path="CUNIT" Target="Currencies" />
-                </EntitySet>
-                <EntitySet Name="ZPORT" EntityType="Nautical.ZPORT">
-                    <NavigationPropertyBinding Path="COUNTRY" Target="Countries" />
-                    <NavigationPropertyBinding Path="COUNTRYN" Target="Countries" />
-                </EntitySet>
-                <EntitySet Name="LFA1" EntityType="Nautical.LFA1">
-                    <NavigationPropertyBinding Path="ADR6" Target="ADR6" />
-                    <NavigationPropertyBinding Path="ADRC" Target="ADRC" />
-                </EntitySet>
-                <EntitySet Name="Newtable" EntityType="Nautical.Newtable" />
-                <EntitySet Name="ADR6" EntityType="Nautical.ADR6">
-                    <NavigationPropertyBinding Path="LFA1" Target="LFA1" />
-                </EntitySet>
-                <EntitySet Name="ADRC" EntityType="Nautical.ADRC">
-                    <NavigationPropertyBinding Path="LFA1" Target="LFA1" />
-                </EntitySet>
-                <EntitySet Name="BidTypeSet" EntityType="Nautical.BidTypeSet" />
-                <EntitySet Name="ZBTP_NAUTI_CreateVoyage" EntityType="Nautical.ZBTP_NAUTI_CreateVoyage" />
-                <EntitySet Name="ZBTP_NAUTI_Marine_DM" EntityType="Nautical.ZBTP_NAUTI_Marine_DM" />
-                <EntitySet Name="ZBTP_Nauti_Voy_DOC_UPD" EntityType="Nautical.ZBTP_Nauti_Voy_DOC_UPD" />
-                <EntitySet Name="ZBTP_NAUTICAL_MariDistance" EntityType="Nautical.ZBTP_NAUTICAL_MariDistance" />
-                <EntitySet Name="Languages" EntityType="Nautical.Languages">
-                    <NavigationPropertyBinding Path="texts" Target="Languages_texts" />
-                    <NavigationPropertyBinding Path="localized" Target="Languages_texts" />
-                </EntitySet>
-                <EntitySet Name="Currencies" EntityType="Nautical.Currencies">
-                    <NavigationPropertyBinding Path="texts" Target="Currencies_texts" />
-                    <NavigationPropertyBinding Path="localized" Target="Currencies_texts" />
-                </EntitySet>
-                <EntitySet Name="Countries" EntityType="Nautical.Countries">
-                    <NavigationPropertyBinding Path="texts" Target="Countries_texts" />
-                    <NavigationPropertyBinding Path="localized" Target="Countries_texts" />
-                </EntitySet>
-                <EntitySet Name="Languages_texts" EntityType="Nautical.Languages_texts" />
-                <EntitySet Name="Currencies_texts" EntityType="Nautical.Currencies_texts" />
-                <EntitySet Name="Countries_texts" EntityType="Nautical.Countries_texts" />
-            </EntityContainer>
-            <EntityType Name="EPATH">
-                <Property Name="IND" Type="Edm.String" MaxLength="1" />
-                <Property Name="API_KEY" Type="Edm.String" MaxLength="150" />
-                <Property Name="API_URL" Type="Edm.String" MaxLength="255" />
-                <Property Name="EPATH" Type="Edm.String" MaxLength="255" />
-            </EntityType>
-            <EntityType Name="BP_MAS_DASH">
-                <Key>
-                    <PropertyRef Name="LIFNR" />
-                </Key>
-                <Property Name="LIFNR" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <Property Name="PARTNER_ROLE" Type="Edm.String" MaxLength="7" />
-                <Property Name="ANRED" Type="Edm.String" MaxLength="15" />
-                <Property Name="NAME1" Type="Edm.String" MaxLength="35" />
-                <Property Name="NAME2" Type="Edm.String" MaxLength="35" />
-                <Property Name="NAME3" Type="Edm.String" MaxLength="35" />
-                <Property Name="SORT1" Type="Edm.String" MaxLength="20" />
-                <Property Name="STR_SUPPL1" Type="Edm.String" MaxLength="40" />
-                <Property Name="STR_SUPPL2" Type="Edm.String" MaxLength="40" />
-                <Property Name="HOUSE_NUM1" Type="Edm.String" MaxLength="10" />
-                <Property Name="STRAS" Type="Edm.String" MaxLength="60" />
-                <Property Name="PSTLZ" Type="Edm.String" MaxLength="10" />
-                <Property Name="ORT01" Type="Edm.String" MaxLength="35" />
-                <Property Name="LAND1" Type="Edm.String" MaxLength="3" />
-                <Property Name="REGIO" Type="Edm.String" MaxLength="3" />
-                <Property Name="TIME_ZONE" Type="Edm.String" MaxLength="6" />
-                <NavigationProperty Name="SPRAS" Type="Nautical.Languages">
-                    <ReferentialConstraint Property="SPRAS_code" ReferencedProperty="code" />
-                </NavigationProperty>
-                <Property Name="SPRAS_code" Type="Edm.String" MaxLength="14" />
-                <Property Name="TELF1" Type="Edm.String" MaxLength="16" />
-                <Property Name="TELF2" Type="Edm.String" MaxLength="16" />
-                <Property Name="TELFX" Type="Edm.String" MaxLength="31" />
-                <Property Name="SMTP_ADDR" Type="Edm.String" MaxLength="241" />
-                <Property Name="ERDAT" Type="Edm.Date" />
-                <Property Name="DATE_TO" Type="Edm.Date" />
-            </EntityType>
-            <EntityType Name="CLASS">
-                <Key>
-                    <PropertyRef Name="ZF_VALUE" />
-                </Key>
-                <Property Name="ZF_VALUE" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <Property Name="ZF_DESC" Type="Edm.String" MaxLength="50" />
-            </EntityType>
-            <EntityType Name="ZCOUNTRY">
-                <Key>
-                    <PropertyRef Name="ZF_VALUE" />
-                </Key>
-                <Property Name="ZF_VALUE" Type="Edm.String" MaxLength="50" Nullable="false" />
-                <Property Name="ZF_DESC" Type="Edm.String" MaxLength="50" />
-            </EntityType>
-            <EntityType Name="ZUSER">
-                <Key>
-                    <PropertyRef Name="ZUSERNAME" />
-                </Key>
-                <Property Name="ZUSERNAME" Type="Edm.String" MaxLength="12" Nullable="false" />
-                <Property Name="ZGROUP" Type="Edm.String" MaxLength="12" />
-            </EntityType>
-            <EntityType Name="ZVOY_RELVoyage">
-                <Key>
-                    <PropertyRef Name="ZGROUP" />
-                </Key>
-                <Property Name="RELS" Type="Edm.String" MaxLength="10" />
-                <Property Name="VOYTY" Type="Edm.String" MaxLength="4" />
-                <Property Name="VESTY" Type="Edm.String" MaxLength="4" />
-                <Property Name="ZGROUP" Type="Edm.String" MaxLength="12" Nullable="false" />
-                <Property Name="APP1" Type="Edm.String" MaxLength="12" />
-            </EntityType>
-            <EntityType Name="ZVOY_RELChartering">
-                <Key>
-                    <PropertyRef Name="APP1" />
-                </Key>
-                <Property Name="RELS" Type="Edm.String" MaxLength="10" />
-                <Property Name="VOYTY" Type="Edm.String" MaxLength="4" />
-                <Property Name="VESTY" Type="Edm.String" MaxLength="4" />
-                <Property Name="ZGROUP" Type="Edm.String" MaxLength="12" />
-                <Property Name="APP1" Type="Edm.String" MaxLength="12" Nullable="false" />
-            </EntityType>
-            <EntityType Name="VOYTYP">
-                <Key>
-                    <PropertyRef Name="VOYCD" />
-                </Key>
-                <Property Name="VOYCD" Type="Edm.String" MaxLength="4" Nullable="false" />
-                <Property Name="VOYDES" Type="Edm.String" MaxLength="40" />
-            </EntityType>
-            <EntityType Name="BidTYP">
-                <Key>
-                    <PropertyRef Name="BNAME" />
-                    <PropertyRef Name="CODE" />
-                </Key>
-                <Property Name="BNAME" Type="Edm.String" MaxLength="12" Nullable="false" />
-                <Property Name="CODE" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <Property Name="VALUE" Type="Edm.String" MaxLength="50" />
-                <Property Name="CVALUE" Type="Edm.String" />
-                <Property Name="CUNIT" Type="Edm.String" />
-                <Property Name="DATATYPE" Type="Edm.String" MaxLength="3" />
-                <Property Name="TABLENAME" Type="Edm.String" MaxLength="20" />
-                <Property Name="MULTI_CHOICE" Type="Edm.Boolean" />
-            </EntityType>
-            <EntityType Name="CARTYP">
-                <Key>
-                    <PropertyRef Name="CARCD" />
-                </Key>
-                <Property Name="CARCD" Type="Edm.String" MaxLength="4" Nullable="false" />
-                <Property Name="CARDES" Type="Edm.String" MaxLength="40" />
-            </EntityType>
-            <EntityType Name="CURR">
-                <Key>
-                    <PropertyRef Name="NAVOYCUR" />
-                </Key>
-                <Property Name="NAVOYCUR" Type="Edm.String" MaxLength="4" Nullable="false" />
-                <Property Name="NAVOYGCURDES" Type="Edm.String" MaxLength="40" />
-            </EntityType>
-            <EntityType Name="MAS">
-                <Key>
-                    <PropertyRef Name="BNAME" />
-                    <PropertyRef Name="CODE" />
-                </Key>
-                <Property Name="BNAME" Type="Edm.String" MaxLength="12" Nullable="false" />
-                <Property Name="CODE" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <Property Name="VALUE" Type="Edm.String" MaxLength="50" />
-                <Property Name="CVALUE" Type="Edm.String" />
-                <Property Name="CUNIT" Type="Edm.String" />
-                <Property Name="DATATYPE" Type="Edm.String" MaxLength="3" />
-                <Property Name="TABLENAME" Type="Edm.String" MaxLength="20" />
-                <Property Name="MULTI_CHOICE" Type="Edm.Boolean" />
-            </EntityType>
-            <EntityType Name="NAVOYGUOM">
-                <Key>
-                    <PropertyRef Name="UOM" />
-                </Key>
-                <Property Name="UOM" Type="Edm.String" MaxLength="3" Nullable="false" />
-                <Property Name="UOMDES" Type="Edm.String" MaxLength="30" />
-            </EntityType>
-            <EntityType Name="NAVOYGC">
-                <Key>
-                    <PropertyRef Name="COSTCODE" />
-                </Key>
-                <Property Name="COSTCODE" Type="Edm.String" MaxLength="4" Nullable="false" />
-                <Property Name="CSTCODES" Type="Edm.String" MaxLength="35" />
-            </EntityType>
-            <EntityType Name="EVENT_MAS">
-                <Key>
-                    <PropertyRef Name="EVTTY" />
-                </Key>
-                <Property Name="EVTTY" Type="Edm.String" MaxLength="20" Nullable="false" />
-                <Property Name="TEXT" Type="Edm.String" MaxLength="40" />
-            </EntityType>
-            <EntityType Name="REF_DOC_S">
-                <Property Name="DOCIND" Type="Edm.String" MaxLength="1" />
-                <Property Name="DOCDESC" Type="Edm.String" MaxLength="20" />
-            </EntityType>
-            <EntityType Name="NAVOYGH">
-                <Property Name="VOYNO" Type="Edm.Int64" />
-                <Property Name="VOYNM" Type="Edm.String" MaxLength="40" />
-                <Property Name="VNOMTK" Type="Edm.String" MaxLength="20" />
-                <Property Name="REFDOC" Type="Edm.String" MaxLength="10" />
-                <Property Name="DOCIND" Type="Edm.Int16" />
-                <Property Name="VESSN" Type="Edm.String" MaxLength="20" />
-                <Property Name="VIMO" Type="Edm.String" MaxLength="20" />
-                <Property Name="CHTYP" Type="Edm.String" MaxLength="5" />
-                <Property Name="CHPNO" Type="Edm.String" MaxLength="10" />
-                <Property Name="CURRKEYS" Type="Edm.String" MaxLength="5" />
-                <Property Name="FRTCO" Type="Edm.Decimal" Scale="variable" />
-                <Property Name="VSTAT" Type="Edm.String" MaxLength="20" />
-                <Property Name="VOYTY" Type="Edm.String" MaxLength="4" />
-                <Property Name="CARTY" Type="Edm.String" MaxLength="4" />
-                <Property Name="CURR" Type="Edm.String" MaxLength="3" />
-                <Property Name="FREGHT" Type="Edm.Decimal" Scale="variable" />
-                <Property Name="PARTY" Type="Edm.String" MaxLength="10" />
-                <Property Name="BIDTYPE" Type="Edm.String" MaxLength="2" />
-                <Property Name="FRCOST" Type="Edm.Decimal" Scale="variable" />
-                <Property Name="FRTU" Type="Edm.String" MaxLength="10" />
-                <Property Name="FRCOST_ACT" Type="Edm.Decimal" Scale="variable" />
-                <Property Name="ZDELETE" Type="Edm.String" MaxLength="1" />
-                <Property Name="REF_VOYNO" Type="Edm.String" MaxLength="20" />
-            </EntityType>
-            <EntityType Name="NAVOYGIP">
-                <NavigationProperty Name="VOYNO" Type="Nautical.NAVOYGH" />
-                <NavigationProperty Name="VOYNM" Type="Nautical.NAVOYGH" />
-                <Property Name="VLEGN" Type="Edm.Int64" />
-                <Property Name="PORTC" Type="Edm.String" MaxLength="10" />
-                <Property Name="PORTN" Type="Edm.String" MaxLength="10" />
-                <Property Name="LOCNAM" Type="Edm.String" MaxLength="10" />
-                <Property Name="PDIST" Type="Edm.Decimal" Scale="variable" />
-                <Property Name="VSPEED" Type="Edm.Decimal" Scale="variable" />
-                <Property Name="PPDAYS" Type="Edm.Decimal" Scale="variable" />
-                <Property Name="VSDAYS" Type="Edm.Decimal" Scale="variable" />
-                <Property Name="VETAD" Type="Edm.Date" />
-                <Property Name="VETAT" Type="Edm.TimeOfDay" />
-                <Property Name="VETDD" Type="Edm.Date" />
-                <Property Name="VETDT" Type="Edm.TimeOfDay" />
-                <Property Name="VWEAD" Type="Edm.Decimal" Scale="variable" />
-                <Property Name="PSTAT" Type="Edm.String" MaxLength="5" />
-                <Property Name="MATNR" Type="Edm.String" MaxLength="40" />
-                <Property Name="MAKTX" Type="Edm.String" MaxLength="40" />
-                <Property Name="CARGS" Type="Edm.Decimal" Precision="12" />
-                <Property Name="CARGU" Type="Edm.String" MaxLength="10" />
-                <Property Name="OTHCO" Type="Edm.Decimal" Scale="variable" />
-                <Property Name="FRCOST" Type="Edm.Decimal" Scale="variable" />
-                <Property Name="TOTCO" Type="Edm.Decimal" Scale="variable" />
-                <Property Name="combinedKey" Type="Edm.String" />
-            </EntityType>
-            <EntityType Name="NAVOYGCIT">
-                <Key>
-                    <PropertyRef Name="VLEGN" />
-                </Key>
-                <NavigationProperty Name="VOYNO" Type="Nautical.NAVOYGH" />
-                <Property Name="VOYNO_VOYNO" Type="Edm.Int64" />
-                <Property Name="VLEGN" Type="Edm.Int64" Nullable="false" />
-                <Property Name="COSTCODE" Type="Edm.String" MaxLength="4" />
-                <Property Name="COSTU" Type="Edm.String" MaxLength="10" />
-                <Property Name="PRCUNIT" Type="Edm.String" MaxLength="3" />
-                <NavigationProperty Name="PROCOST" Type="Nautical.Currencies">
-                    <ReferentialConstraint Property="PROCOST_code" ReferencedProperty="code" />
-                </NavigationProperty>
-                <Property Name="PROCOST_code" Type="Edm.String" MaxLength="3" />
-                <Property Name="COSTCURR" Type="Edm.String" MaxLength="5" />
-                <Property Name="CSTCODES" Type="Edm.String" MaxLength="35" />
-                <Property Name="COST_CHECK" Type="Edm.String" MaxLength="1" />
-            </EntityType>
-            <EntityType Name="VOYAG_APPR">
-                <Key>
-                    <PropertyRef Name="VREQNO" />
-                </Key>
-                <Property Name="VREQNO" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <NavigationProperty Name="VOYNO" Type="Nautical.NAVOYGH" />
-                <Property Name="VOYNO_VOYNO" Type="Edm.Int64" />
-                <Property Name="ZLEVEL" Type="Edm.String" MaxLength="2" />
-                <Property Name="UNAME" Type="Edm.String" MaxLength="12" />
-                <Property Name="ZDATE" Type="Edm.Date" />
-                <Property Name="ZTIME" Type="Edm.TimeOfDay" />
-                <Property Name="ZCOMM" Type="Edm.String" MaxLength="250" />
-                <Property Name="ZACTION" Type="Edm.String" MaxLength="4" />
-            </EntityType>
-            <EntityType Name="CHARTREQ">
-                <Key>
-                    <PropertyRef Name="CHRNMEX" />
-                </Key>
-                <Property Name="CHRNMIN" Type="Edm.String" MaxLength="10" />
-                <Property Name="CHRNMEX" Type="Edm.String" MaxLength="20" Nullable="false" />
-                <Property Name="CHRDATE" Type="Edm.Date" />
-                <Property Name="CHRCTIME" Type="Edm.TimeOfDay" />
-                <Property Name="CHRQSDATE" Type="Edm.Date" />
-                <Property Name="CHRQSTIME" Type="Edm.TimeOfDay" />
-                <Property Name="CHRQEDATE" Type="Edm.Date" />
-                <Property Name="CHRQETIME" Type="Edm.TimeOfDay" />
-                <Property Name="CHRQDATE" Type="Edm.Date" />
-                <Property Name="CHPREC" Type="Edm.String" MaxLength="4" />
-                <Property Name="CHRPORG" Type="Edm.String" MaxLength="4" />
-                <Property Name="CHRPORGN" Type="Edm.String" MaxLength="4" />
-                <Property Name="CHRPGRP" Type="Edm.String" MaxLength="3" />
-                <Property Name="CHRPGRPN" Type="Edm.String" MaxLength="3" />
-                <Property Name="CHRPLANT" Type="Edm.String" MaxLength="4" />
-                <Property Name="CHRPLANTN" Type="Edm.String" MaxLength="40" />
-                <Property Name="CHREXCR" Type="Edm.Decimal" Precision="14" />
-                <Property Name="CHRPAYT" Type="Edm.String" MaxLength="4" />
-                <Property Name="CHRPAYTD" Type="Edm.String" MaxLength="30" />
-                <Property Name="CHRINCO" Type="Edm.String" MaxLength="3" />
-                <Property Name="CHRINCOL" Type="Edm.String" MaxLength="70" />
-                <Property Name="CIMATER" Type="Edm.String" MaxLength="12" />
-                <Property Name="CIMATDES" Type="Edm.String" MaxLength="40" />
-                <Property Name="CIQTY" Type="Edm.String" MaxLength="17" />
-                <Property Name="CIUOM" Type="Edm.String" MaxLength="3" />
-                <NavigationProperty Name="VOYNM" Type="Nautical.NAVOYGH" />
-                <Property Name="VOYNM_VOYNO" Type="Edm.Int64" />
-                <Property Name="CHRVEN" Type="Edm.String" MaxLength="10" />
-                <Property Name="CHRVENN" Type="Edm.String" MaxLength="35" />
-                <Property Name="CIPREC" Type="Edm.String" MaxLength="5" />
-                <Property Name="ZDELETE" Type="Edm.String" MaxLength="1" />
-                <Property Name="REF_CHRNMI" Type="Edm.String" MaxLength="10" />
-            </EntityType>
-            <EntityType Name="ZCHAT_VEN">
-                <Key>
-                    <PropertyRef Name="CHRNMIN" />
-                </Key>
-                <Property Name="CHRNMIN" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <Property Name="LIFNR" Type="Edm.String" MaxLength="10" />
-                <NavigationProperty Name="VOYNO" Type="Nautical.NAVOYGH" />
-            </EntityType>
-            <EntityType Name="CHAT_APPR">
-                <Key>
-                    <PropertyRef Name="CREQNO" />
-                </Key>
-                <Property Name="CREQNO" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <Property Name="CHRNMIN" Type="Edm.String" MaxLength="10" />
-                <Property Name="ZLEVEL" Type="Edm.String" MaxLength="2" />
-                <Property Name="UNAME" Type="Edm.String" MaxLength="12" />
-                <Property Name="ZDATE" Type="Edm.Date" />
-                <Property Name="ZTIME" Type="Edm.TimeOfDay" />
-                <Property Name="ZCOMM" Type="Edm.String" MaxLength="250" />
-                <Property Name="ZACTION" Type="Edm.String" MaxLength="4" />
-            </EntityType>
-            <EntityType Name="VEND_BIDH">
-                <Key>
-                    <PropertyRef Name="VOYNO_VOYNO" />
-                </Key>
-                <NavigationProperty Name="VOYNO" Type="Nautical.NAVOYGH" />
-                <Property Name="VOYNO_VOYNO" Type="Edm.Int64" Nullable="false" />
-                <Property Name="LIFNR" Type="Edm.String" MaxLength="20" />
-                <Property Name="CHRNMIN" Type="Edm.String" MaxLength="10" />
-                <Property Name="VIMONO" Type="Edm.String" MaxLength="10" />
-                <Property Name="VNAME" Type="Edm.String" MaxLength="40" />
-                <Property Name="BIDDATE" Type="Edm.Date" />
-                <Property Name="BIDTIME" Type="Edm.TimeOfDay" />
-            </EntityType>
-            <EntityType Name="VEND_BID">
-                <Key>
-                    <PropertyRef Name="VOYNO_VOYNO" />
-                    <PropertyRef Name="CHARNMIN" />
-                </Key>
-                <NavigationProperty Name="VOYNO" Type="Nautical.NAVOYGH" />
-                <Property Name="VOYNO_VOYNO" Type="Edm.Int64" Nullable="false" />
-                <Property Name="LIFNR" Type="Edm.String" MaxLength="10" />
-                <Property Name="ZCODE" Type="Edm.String" MaxLength="10" />
-                <Property Name="VALUE" Type="Edm.String" MaxLength="50" />
-                <NavigationProperty Name="CVALUE" Type="Nautical.Currencies">
-                    <ReferentialConstraint Property="CVALUE_code" ReferencedProperty="code" />
-                </NavigationProperty>
-                <Property Name="CVALUE_code" Type="Edm.String" MaxLength="3" />
-                <NavigationProperty Name="CUNIT" Type="Nautical.Currencies">
-                    <ReferentialConstraint Property="CUNIT_code" ReferencedProperty="code" />
-                </NavigationProperty>
-                <Property Name="CUNIT_code" Type="Edm.String" MaxLength="3" />
-                <Property Name="CHARNMIN" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <Property Name="CODE_DESC" Type="Edm.String" MaxLength="50" />
-                <Property Name="BIDDATE" Type="Edm.Date" />
-                <Property Name="BIDTIME" Type="Edm.TimeOfDay" />
-                <Property Name="ZCOM" Type="Edm.String" MaxLength="250" />
-            </EntityType>
-            <EntityType Name="BID_SCORE">
-                <Key>
-                    <PropertyRef Name="CHRNMIN" />
-                </Key>
-                <Property Name="CHRNMIN" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <Property Name="CODE" Type="Edm.String" MaxLength="10" />
-                <Property Name="CODE_DESC" Type="Edm.String" MaxLength="50" />
-                <NavigationProperty Name="WTAGE" Type="Nautical.Currencies">
-                    <ReferentialConstraint Property="WTAGE_code" ReferencedProperty="code" />
-                </NavigationProperty>
-                <Property Name="WTAGE_code" Type="Edm.String" MaxLength="3" />
-                <Property Name="SCORE" Type="Edm.Int64" />
-                <Property Name="VALUE" Type="Edm.String" MaxLength="50" />
-            </EntityType>
-            <EntityType Name="VEND_FBID">
-                <Key>
-                    <PropertyRef Name="VOYNO_VOYNO" />
-                </Key>
-                <NavigationProperty Name="VOYNO" Type="Nautical.NAVOYGH" />
-                <Property Name="VOYNO_VOYNO" Type="Edm.Int64" Nullable="false" />
-                <Property Name="LIFNR" Type="Edm.String" MaxLength="10" />
-                <Property Name="ZCODE" Type="Edm.String" MaxLength="10" />
-                <Property Name="BIDDATE" Type="Edm.Date" />
-                <Property Name="BIDTIME" Type="Edm.TimeOfDay" />
-                <NavigationProperty Name="CHRNMIN" Type="Nautical.BID_SCORE">
-                    <ReferentialConstraint Property="CHRNMIN_CHRNMIN" ReferencedProperty="CHRNMIN" />
-                </NavigationProperty>
-                <Property Name="CHRNMIN_CHRNMIN" Type="Edm.String" MaxLength="10" />
-                <Property Name="CODE_DESC" Type="Edm.String" MaxLength="50" />
-                <Property Name="VALUE" Type="Edm.String" MaxLength="50" />
-                <NavigationProperty Name="CVALUE" Type="Nautical.Currencies">
-                    <ReferentialConstraint Property="CVALUE_code" ReferencedProperty="code" />
-                </NavigationProperty>
-                <Property Name="CVALUE_code" Type="Edm.String" MaxLength="3" />
-                <NavigationProperty Name="CUNIT" Type="Nautical.Currencies">
-                    <ReferentialConstraint Property="CUNIT_code" ReferencedProperty="code" />
-                </NavigationProperty>
-                <Property Name="CUNIT_code" Type="Edm.String" MaxLength="3" />
-                <Property Name="CHRQSDATE" Type="Edm.Date" />
-                <Property Name="CHRQSTIME" Type="Edm.TimeOfDay" />
-                <Property Name="CHRQEDATE" Type="Edm.Date" />
-                <Property Name="CHRQETIME" Type="Edm.TimeOfDay" />
-                <Property Name="DONE_BY" Type="Edm.String" MaxLength="1" />
-                <Property Name="UNAME" Type="Edm.String" MaxLength="12" />
-                <Property Name="STAT" Type="Edm.String" MaxLength="4" />
-                <Property Name="ZMODE" Type="Edm.String" MaxLength="4" />
-                <Property Name="ZCOMM" Type="Edm.String" MaxLength="250" />
-            </EntityType>
-            <EntityType Name="ZPORT">
-                <Key>
-                    <PropertyRef Name="ZF_VALUE" />
-                </Key>
-                <Property Name="ZF_VALUE" Type="Edm.String" MaxLength="50" Nullable="false" />
-                <Property Name="ZF_DESC" Type="Edm.String" MaxLength="50" />
-                <NavigationProperty Name="COUNTRY" Type="Nautical.Countries">
-                    <ReferentialConstraint Property="COUNTRY_code" ReferencedProperty="code" />
-                </NavigationProperty>
-                <Property Name="COUNTRY_code" Type="Edm.String" MaxLength="3" />
-                <NavigationProperty Name="COUNTRYN" Type="Nautical.Countries">
-                    <ReferentialConstraint Property="COUNTRYN_code" ReferencedProperty="code" />
-                </NavigationProperty>
-                <Property Name="COUNTRYN_code" Type="Edm.String" MaxLength="3" />
-            </EntityType>
-            <EntityType Name="LFA1">
-                <Property Name="LIFNR" Type="Edm.String" MaxLength="10" />
-                <Property Name="ANRED" Type="Edm.String" MaxLength="15" />
-                <Property Name="ADRNR" Type="Edm.String" MaxLength="10" />
-                <Property Name="NAME1" Type="Edm.String" MaxLength="35" />
-                <Property Name="NAME2" Type="Edm.String" MaxLength="35" />
-                <Property Name="NAME3" Type="Edm.String" MaxLength="35" />
-                <Property Name="STRAS" Type="Edm.String" MaxLength="35" />
-                <Property Name="PSTLZ" Type="Edm.String" MaxLength="10" />
-                <Property Name="ORT01" Type="Edm.String" MaxLength="35" />
-                <Property Name="LAND1" Type="Edm.String" MaxLength="3" />
-                <Property Name="REGIO" Type="Edm.String" MaxLength="3" />
-                <Property Name="TELF1" Type="Edm.String" MaxLength="16" />
-                <Property Name="TELF2" Type="Edm.String" MaxLength="16" />
-                <Property Name="TELFX" Type="Edm.String" MaxLength="31" />
-                <Property Name="ERDAT" Type="Edm.Date" />
-                <Property Name="SPRAS" Type="Edm.String" MaxLength="15" />
-                <NavigationProperty Name="ADR6" Type="Nautical.ADR6" Partner="LFA1" />
-                <NavigationProperty Name="ADRC" Type="Nautical.ADRC" Partner="LFA1" />
-            </EntityType>
-            <EntityType Name="Newtable">
-                <Key>
-                    <PropertyRef Name="ID" />
-                    <PropertyRef Name="LIFNR" />
-                </Key>
-                <Property Name="ID" Type="Edm.Guid" Nullable="false" />
-                <Property Name="LIFNR" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <Property Name="ANRED" Type="Edm.String" MaxLength="15" />
-                <Property Name="ADRNR" Type="Edm.String" MaxLength="100" />
-                <Property Name="NAME1" Type="Edm.String" MaxLength="35" />
-                <Property Name="STREET" Type="Edm.String" MaxLength="60" />
-                <Property Name="PSTLZ" Type="Edm.String" MaxLength="10" />
-                <Property Name="ORT01" Type="Edm.String" MaxLength="35" />
-                <Property Name="LAND1" Type="Edm.String" MaxLength="3" />
-                <Property Name="REGIO" Type="Edm.String" MaxLength="3" />
-                <Property Name="TELF1" Type="Edm.String" MaxLength="16" />
-                <Property Name="TELF2" Type="Edm.String" MaxLength="16" />
-                <Property Name="TELFX" Type="Edm.String" MaxLength="31" />
-                <Property Name="ERDAT" Type="Edm.Date" />
-                <Property Name="SPRAS" Type="Edm.String" MaxLength="15" />
-                <Property Name="SMTP_ADNR" Type="Edm.String" MaxLength="241" />
-                <Property Name="DATE_TO" Type="Edm.Date" />
-                <Property Name="STR_SUPPL1" Type="Edm.String" MaxLength="40" />
-                <Property Name="STR_SUPPL2" Type="Edm.String" MaxLength="40" />
-                <Property Name="SORT1" Type="Edm.String" MaxLength="20" />
-                <Property Name="TIME_ZONE" Type="Edm.String" MaxLength="6" />
-                <Property Name="HOUSE_NUM1" Type="Edm.String" MaxLength="10" />
-            </EntityType>
-            <EntityType Name="ADR6">
-                <Property Name="ADDRNUMBER" Type="Edm.String" MaxLength="10" />
-                <Property Name="SMTP_ADNR" Type="Edm.String" MaxLength="241" />
-                <NavigationProperty Name="LFA1" Type="Nautical.LFA1" Partner="ADR6" />
-            </EntityType>
-            <EntityType Name="ADRC">
-                <Property Name="ADDRNUMBER" Type="Edm.String" MaxLength="10" />
-                <Property Name="DATE_TO" Type="Edm.Date" />
-                <Property Name="STR_SUPPL1" Type="Edm.String" MaxLength="40" />
-                <Property Name="STR_SUPPL2" Type="Edm.String" MaxLength="40" />
-                <Property Name="STREET" Type="Edm.String" MaxLength="60" />
-                <Property Name="SORT1" Type="Edm.String" MaxLength="20" />
-                <Property Name="TIME_ZONE" Type="Edm.String" MaxLength="6" />
-                <Property Name="HOUSE_NUM1" Type="Edm.String" MaxLength="10" />
-                <NavigationProperty Name="LFA1" Type="Nautical.LFA1" Partner="ADRC" />
-            </EntityType>
-            <EntityType Name="BidTypeSet">
-                <Key>
-                    <PropertyRef Name="DomvalueL" />
-                </Key>
-                <Property Name="DomvalueL" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <Property Name="Ddtext" Type="Edm.String" MaxLength="60" Nullable="false" />
-            </EntityType>
-            <EntityType Name="ZBTP_NAUTI_CreateVoyage">
-                <Key>
-                    <PropertyRef Name="Vlegn" />
-                </Key>
-                <Property Name="Vlegn" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <Property Name="Portc" Type="Edm.String" MaxLength="10" />
-                <Property Name="Portn" Type="Edm.String" MaxLength="25" />
-                <Property Name="Pdist" Type="Edm.Decimal" Scale="3" Precision="13" />
-                <Property Name="Medst" Type="Edm.String" MaxLength="3" />
-                <Property Name="Vspeed" Type="Edm.Decimal" Scale="3" Precision="17" />
-                <Property Name="Ppdays" Type="Edm.Decimal" Scale="3" Precision="6" />
-                <Property Name="Vsdays" Type="Edm.Decimal" Scale="3" Precision="7" />
-                <Property Name="Vetad" Type="Edm.Date" />
-                <Property Name="Vetat" Type="Edm.TimeOfDay" />
-                <Property Name="Vetdd" Type="Edm.Date" />
-                <Property Name="Vetdt" Type="Edm.TimeOfDay" />
-                <Property Name="Vwead" Type="Edm.String" MaxLength="10" />
-                <Property Name="Pstat" Type="Edm.String" MaxLength="5" />
-                <Property Name="Matnr" Type="Edm.String" MaxLength="40" />
-                <Property Name="Maktx" Type="Edm.String" MaxLength="40" />
-                <Property Name="Cargs" Type="Edm.Decimal" Scale="0" Precision="12" />
-                <Property Name="Cargu" Type="Edm.String" MaxLength="3" />
-                <Property Name="Othco" Type="Edm.Decimal" Scale="3" Precision="24" />
-                <Property Name="Frcost" Type="Edm.Decimal" Scale="3" Precision="24" />
-                <Property Name="Totco" Type="Edm.Decimal" Scale="3" Precision="24" />
-            </EntityType>
-            <EntityType Name="ZBTP_NAUTI_Marine_DM">
-                <Key>
-                    <PropertyRef Name="start_port" />
-                    <PropertyRef Name="end_port" />
-                    <PropertyRef Name="route_id" />
-                    <PropertyRef Name="location_id" />
-                </Key>
-                <Property Name="start_port" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <Property Name="end_port" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <Property Name="route_id" Type="Edm.String" MaxLength="2" Nullable="false" />
-                <Property Name="location_id" Type="Edm.String" MaxLength="3" Nullable="false" />
-                <Property Name="latitude" Type="Edm.String" MaxLength="10" />
-                <Property Name="longitude" Type="Edm.String" MaxLength="10" />
-            </EntityType>
-            <EntityType Name="ZBTP_Nauti_Voy_DOC_UPD">
-                <Key>
-                    <PropertyRef Name="sl_no" />
-                    <PropertyRef Name="voyno" />
-                    <PropertyRef Name="filename" />
-                </Key>
-                <Property Name="sl_no" Type="Edm.String" MaxLength="2" Nullable="false" />
-                <Property Name="voyno" Type="Edm.String" MaxLength="20" Nullable="false" />
-                <Property Name="filename" Type="Edm.String" MaxLength="100" Nullable="false" />
-                <Property Name="file_content" Type="Edm.Binary" />
-            </EntityType>
-            <EntityType Name="ZBTP_NAUTICAL_MariDistance">
-                <Key>
-                    <PropertyRef Name="from_port" />
-                    <PropertyRef Name="to_port" />
-                    <PropertyRef Name="distance" />
-                </Key>
-                <Property Name="from_port" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <Property Name="to_port" Type="Edm.String" MaxLength="10" Nullable="false" />
-                <Property Name="distance" Type="Edm.String" MaxLength="10" Nullable="false" />
-            </EntityType>
-            <EntityType Name="Languages">
-                <Key>
-                    <PropertyRef Name="code" />
-                </Key>
-                <Property Name="name" Type="Edm.String" MaxLength="255" />
-                <Property Name="descr" Type="Edm.String" MaxLength="1000" />
-                <Property Name="code" Type="Edm.String" MaxLength="14" Nullable="false" />
-                <NavigationProperty Name="texts" Type="Collection(Nautical.Languages_texts)">
-                    <OnDelete Action="Cascade" />
-                </NavigationProperty>
-                <NavigationProperty Name="localized" Type="Nautical.Languages_texts">
-                    <ReferentialConstraint Property="code" ReferencedProperty="code" />
-                </NavigationProperty>
-            </EntityType>
-            <EntityType Name="Currencies">
-                <Key>
-                    <PropertyRef Name="code" />
-                </Key>
-                <Property Name="name" Type="Edm.String" MaxLength="255" />
-                <Property Name="descr" Type="Edm.String" MaxLength="1000" />
-                <Property Name="code" Type="Edm.String" MaxLength="3" Nullable="false" />
-                <Property Name="symbol" Type="Edm.String" MaxLength="5" />
-                <Property Name="minorUnit" Type="Edm.Int16" />
-                <NavigationProperty Name="texts" Type="Collection(Nautical.Currencies_texts)">
-                    <OnDelete Action="Cascade" />
-                </NavigationProperty>
-                <NavigationProperty Name="localized" Type="Nautical.Currencies_texts">
-                    <ReferentialConstraint Property="code" ReferencedProperty="code" />
-                </NavigationProperty>
-            </EntityType>
-            <EntityType Name="Countries">
-                <Key>
-                    <PropertyRef Name="code" />
-                </Key>
-                <Property Name="name" Type="Edm.String" MaxLength="255" />
-                <Property Name="descr" Type="Edm.String" MaxLength="1000" />
-                <Property Name="code" Type="Edm.String" MaxLength="3" Nullable="false" />
-                <NavigationProperty Name="texts" Type="Collection(Nautical.Countries_texts)">
-                    <OnDelete Action="Cascade" />
-                </NavigationProperty>
-                <NavigationProperty Name="localized" Type="Nautical.Countries_texts">
-                    <ReferentialConstraint Property="code" ReferencedProperty="code" />
-                </NavigationProperty>
-            </EntityType>
-            <EntityType Name="Languages_texts">
-                <Key>
-                    <PropertyRef Name="locale" />
-                    <PropertyRef Name="code" />
-                </Key>
-                <Property Name="locale" Type="Edm.String" MaxLength="14" Nullable="false" />
-                <Property Name="name" Type="Edm.String" MaxLength="255" />
-                <Property Name="descr" Type="Edm.String" MaxLength="1000" />
-                <Property Name="code" Type="Edm.String" MaxLength="14" Nullable="false" />
-            </EntityType>
-            <EntityType Name="Currencies_texts">
-                <Key>
-                    <PropertyRef Name="locale" />
-                    <PropertyRef Name="code" />
-                </Key>
-                <Property Name="locale" Type="Edm.String" MaxLength="14" Nullable="false" />
-                <Property Name="name" Type="Edm.String" MaxLength="255" />
-                <Property Name="descr" Type="Edm.String" MaxLength="1000" />
-                <Property Name="code" Type="Edm.String" MaxLength="3" Nullable="false" />
-            </EntityType>
-            <EntityType Name="Countries_texts">
-                <Key>
-                    <PropertyRef Name="locale" />
-                    <PropertyRef Name="code" />
-                </Key>
-                <Property Name="locale" Type="Edm.String" MaxLength="14" Nullable="false" />
-                <Property Name="name" Type="Edm.String" MaxLength="255" />
-                <Property Name="descr" Type="Edm.String" MaxLength="1000" />
-                <Property Name="code" Type="Edm.String" MaxLength="3" Nullable="false" />
-            </EntityType>
-            <Annotations Target="Nautical.BP_MAS_DASH/LIFNR">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.BP_MAS_DASH/SPRAS">
-                <Annotation Term="Common.Label" String="Language" />
-                <Annotation Term="Core.Description" String="Language code as specified by ISO 639-1" />
-            </Annotations>
-            <Annotations Target="Nautical.BP_MAS_DASH/SPRAS_code">
-                <Annotation Term="Common.Label" String="Language" />
-                <Annotation Term="Common.ValueList">
-                    <Record Type="Common.ValueListType">
-                        <PropertyValue Property="Label" String="Language" />
-                        <PropertyValue Property="CollectionPath" String="Languages" />
-                        <PropertyValue Property="Parameters">
-                            <Collection>
-                                <Record Type="Common.ValueListParameterInOut">
-                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SPRAS_code" />
-                                    <PropertyValue Property="ValueListProperty" String="code" />
-                                </Record>
-                                <Record Type="Common.ValueListParameterDisplayOnly">
-                                    <PropertyValue Property="ValueListProperty" String="name" />
-                                </Record>
-                            </Collection>
-                        </PropertyValue>
-                    </Record>
-                </Annotation>
-                <Annotation Term="Core.Description" String="Language code as specified by ISO 639-1" />
-            </Annotations>
-            <Annotations Target="Nautical.ZUSER/ZUSERNAME">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.ZVOY_RELVoyage/ZGROUP">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.ZVOY_RELVoyage/APP1">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.ZVOY_RELChartering/APP1">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.VOYTYP/VOYCD">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.VOYTYP/VOYDES">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.BidTYP/BNAME">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.BidTYP/CODE">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.CARTYP/CARCD">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.CARTYP/CARDES">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.MAS/BNAME">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.MAS/CODE">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.NAVOYGC/COSTCODE">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.EVENT_MAS/EVTTY">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.NAVOYGCIT/PROCOST">
-                <Annotation Term="Common.Label" String="Currency" />
-                <Annotation Term="Core.Description" String="Currency code as specified by ISO 4217" />
-            </Annotations>
-            <Annotations Target="Nautical.NAVOYGCIT/PROCOST_code">
-                <Annotation Term="Common.Label" String="Currency" />
-                <Annotation Term="Common.ValueList">
-                    <Record Type="Common.ValueListType">
-                        <PropertyValue Property="Label" String="Currency" />
-                        <PropertyValue Property="CollectionPath" String="Currencies" />
-                        <PropertyValue Property="Parameters">
-                            <Collection>
-                                <Record Type="Common.ValueListParameterInOut">
-                                    <PropertyValue Property="LocalDataProperty" PropertyPath="PROCOST_code" />
-                                    <PropertyValue Property="ValueListProperty" String="code" />
-                                </Record>
-                                <Record Type="Common.ValueListParameterDisplayOnly">
-                                    <PropertyValue Property="ValueListProperty" String="name" />
-                                </Record>
-                            </Collection>
-                        </PropertyValue>
-                    </Record>
-                </Annotation>
-                <Annotation Term="Core.Description" String="Currency code as specified by ISO 4217" />
-            </Annotations>
-            <Annotations Target="Nautical.VOYAG_APPR/VREQNO">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.CHARTREQ/CHRNMEX">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.ZCHAT_VEN/CHRNMIN">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.VEND_BID/CVALUE">
-                <Annotation Term="Common.Label" String="Currency" />
-                <Annotation Term="Core.Description" String="Currency code as specified by ISO 4217" />
-            </Annotations>
-            <Annotations Target="Nautical.VEND_BID/CVALUE_code">
-                <Annotation Term="Common.Label" String="Currency" />
-                <Annotation Term="Common.ValueList">
-                    <Record Type="Common.ValueListType">
-                        <PropertyValue Property="Label" String="Currency" />
-                        <PropertyValue Property="CollectionPath" String="Currencies" />
-                        <PropertyValue Property="Parameters">
-                            <Collection>
-                                <Record Type="Common.ValueListParameterInOut">
-                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CVALUE_code" />
-                                    <PropertyValue Property="ValueListProperty" String="code" />
-                                </Record>
-                                <Record Type="Common.ValueListParameterDisplayOnly">
-                                    <PropertyValue Property="ValueListProperty" String="name" />
-                                </Record>
-                            </Collection>
-                        </PropertyValue>
-                    </Record>
-                </Annotation>
-                <Annotation Term="Core.Description" String="Currency code as specified by ISO 4217" />
-            </Annotations>
-            <Annotations Target="Nautical.VEND_BID/CUNIT">
-                <Annotation Term="Common.Label" String="Currency" />
-                <Annotation Term="Core.Description" String="Currency code as specified by ISO 4217" />
-            </Annotations>
-            <Annotations Target="Nautical.VEND_BID/CUNIT_code">
-                <Annotation Term="Common.Label" String="Currency" />
-                <Annotation Term="Common.ValueList">
-                    <Record Type="Common.ValueListType">
-                        <PropertyValue Property="Label" String="Currency" />
-                        <PropertyValue Property="CollectionPath" String="Currencies" />
-                        <PropertyValue Property="Parameters">
-                            <Collection>
-                                <Record Type="Common.ValueListParameterInOut">
-                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CUNIT_code" />
-                                    <PropertyValue Property="ValueListProperty" String="code" />
-                                </Record>
-                                <Record Type="Common.ValueListParameterDisplayOnly">
-                                    <PropertyValue Property="ValueListProperty" String="name" />
-                                </Record>
-                            </Collection>
-                        </PropertyValue>
-                    </Record>
-                </Annotation>
-                <Annotation Term="Core.Description" String="Currency code as specified by ISO 4217" />
-            </Annotations>
-            <Annotations Target="Nautical.VEND_BID/CHARNMIN">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.BID_SCORE/CHRNMIN">
-                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
-            </Annotations>
-            <Annotations Target="Nautical.BID_SCORE/WTAGE">
-                <Annotation Term="Common.Label" String="Currency" />
-                <Annotation Term="Core.Description" String="Currency code as specified by ISO 4217" />
-            </Annotations>
-            <Annotations Target="Nautical.BID_SCORE/WTAGE_code">
-                <Annotation Term="Common.Label" String="Currency" />
-                <Annotation Term="Common.ValueList">
-                    <Record Type="Common.ValueListType">
-                        <PropertyValue Property="Label" String="Currency" />
-                        <PropertyValue Property="CollectionPath" String="Currencies" />
-                        <PropertyValue Property="Parameters">
-                            <Collection>
-                                <Record Type="Common.ValueListParameterInOut">
-                                    <PropertyValue Property="LocalDataProperty" PropertyPath="WTAGE_code" />
-                                    <PropertyValue Property="ValueListProperty" String="code" />
-                                </Record>
-                                <Record Type="Common.ValueListParameterDisplayOnly">
-                                    <PropertyValue Property="ValueListProperty" String="name" />
-                                </Record>
-                            </Collection>
-                        </PropertyValue>
-                    </Record>
-                </Annotation>
-                <Annotation Term="Core.Description" String="Currency code as specified by ISO 4217" />
-            </Annotations>
-            <Annotations Target="Nautical.VEND_FBID/CVALUE">
-                <Annotation Term="Common.Label" String="Currency" />
-                <Annotation Term="Core.Description" String="Currency code as specified by ISO 4217" />
-            </Annotations>
-            <Annotations Target="Nautical.VEND_FBID/CVALUE_code">
-                <Annotation Term="Common.Label" String="Currency" />
-                <Annotation Term="Common.ValueList">
-                    <Record Type="Common.ValueListType">
-                        <PropertyValue Property="Label" String="Currency" />
-                        <PropertyValue Property="CollectionPath" String="Currencies" />
-                        <PropertyValue Property="Parameters">
-                            <Collection>
-                                <Record Type="Common.ValueListParameterInOut">
-                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CVALUE_code" />
-                                    <PropertyValue Property="ValueListProperty" String="code" />
-                                </Record>
-                                <Record Type="Common.ValueListParameterDisplayOnly">
-                                    <PropertyValue Property="ValueListProperty" String="name" />
-                                </Record>
-                            </Collection>
-                        </PropertyValue>
-                    </Record>
-                </Annotation>
-                <Annotation Term="Core.Description" String="Currency code as specified by ISO 4217" />
-            </Annotations>
-            <Annotations Target="Nautical.VEND_FBID/CUNIT">
-                <Annotation Term="Common.Label" String="Currency" />
-                <Annotation Term="Core.Description" String="Currency code as specified by ISO 4217" />
-            </Annotations>
-            <Annotations Target="Nautical.VEND_FBID/CUNIT_code">
-                <Annotation Term="Common.Label" String="Currency" />
-                <Annotation Term="Common.ValueList">
-                    <Record Type="Common.ValueListType">
-                        <PropertyValue Property="Label" String="Currency" />
-                        <PropertyValue Property="CollectionPath" String="Currencies" />
-                        <PropertyValue Property="Parameters">
-                            <Collection>
-                                <Record Type="Common.ValueListParameterInOut">
-                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CUNIT_code" />
-                                    <PropertyValue Property="ValueListProperty" String="code" />
-                                </Record>
-                                <Record Type="Common.ValueListParameterDisplayOnly">
-                                    <PropertyValue Property="ValueListProperty" String="name" />
-                                </Record>
-                            </Collection>
-                        </PropertyValue>
-                    </Record>
-                </Annotation>
-                <Annotation Term="Core.Description" String="Currency code as specified by ISO 4217" />
-            </Annotations>
-            <Annotations Target="Nautical.ZPORT/COUNTRY">
-                <Annotation Term="Common.Label" String="Country/Region" />
-                <Annotation Term="Core.Description" String="Country/region code as specified by ISO 3166-1" />
-            </Annotations>
-            <Annotations Target="Nautical.ZPORT/COUNTRY_code">
-                <Annotation Term="Common.Label" String="Country/Region" />
-                <Annotation Term="Common.ValueList">
-                    <Record Type="Common.ValueListType">
-                        <PropertyValue Property="Label" String="Country/Region" />
-                        <PropertyValue Property="CollectionPath" String="Countries" >
-                            
-                        </PropertyValue>
-                        <PropertyValue Property="Parameters">
-                            <Collection>
-                                <Record Type="Common.ValueListParameterInOut">
-                                    <PropertyValue Property="LocalDataProperty" PropertyPath="COUNTRY_code" />
-                                    <PropertyValue Property="ValueListProperty" String="code" />
-                                </Record>
-                                <Record Type="Common.ValueListParameterDisplayOnly">
-                                    <PropertyValue Property="ValueListProperty" String="name" />
-                                </Record>
-                            </Collection>
-                        </PropertyValue>
-                    </Record>
-                </Annotation>
-                <Annotation Term="Core.Description" String="Country/region code as specified by ISO 3166-1" />
-            </Annotations>
-            <Annotations Target="Nautical.ZPORT/COUNTRYN">
-                <Annotation Term="Common.Label" String="Country/Region" />
-                <Annotation Term="Core.Description" String="Country/region code as specified by ISO 3166-1" />
-            </Annotations>
-            <Annotations Target="Nautical.ZPORT/COUNTRYN_code">
-                <Annotation Term="Common.Label" String="Country/Region" />
-                <Annotation Term="Common.ValueList">
-                    <Record Type="Common.ValueListType">
-                        <PropertyValue Property="Label" String="Country/Region" />
-                        <PropertyValue Property="CollectionPath" String="Countries" />
-                        <PropertyValue Property="Parameters">
-                            <Collection>
-                                <Record Type="Common.ValueListParameterInOut">
-                                    <PropertyValue Property="LocalDataProperty" PropertyPath="COUNTRYN_code" />
-                                    <PropertyValue Property="ValueListProperty" String="code" />
-                                </Record>
-                                <Record Type="Common.ValueListParameterDisplayOnly">
-                                    <PropertyValue Property="ValueListProperty" String="name" />
-                                </Record>
-                            </Collection>
-                        </PropertyValue>
-                    </Record>
-                </Annotation>
-                <Annotation Term="Core.Description" String="Country/region code as specified by ISO 3166-1" />
-            </Annotations>
-            <Annotations Target="Nautical.Newtable/ID">
-                <Annotation Term="Core.Computed" Bool="true" />
-                <Annotation Term="Core.ComputedDefaultValue" Bool="true" />
-            </Annotations>
-            <Annotations Target="Nautical.Languages">
-                <Annotation Term="UI.Identification">
-                    <Collection>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="name" />
-                        </Record>
-                    </Collection>
-                </Annotation>
-            </Annotations>
-            <Annotations Target="Nautical.Languages/name">
-                <Annotation Term="Common.Label" String="Name" />
-            </Annotations>
-            <Annotations Target="Nautical.Languages/descr">
-                <Annotation Term="Common.Label" String="Description" />
-            </Annotations>
-            <Annotations Target="Nautical.Languages/code">
-                <Annotation Term="Common.Text" Path="name" />
-                <Annotation Term="Common.Label" String="Language Code" />
-            </Annotations>
-            <Annotations Target="Nautical.Currencies">
-                <Annotation Term="UI.Identification">
-                    <Collection>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="name" />
-                        </Record>
-                    </Collection>
-                </Annotation>
-            </Annotations>
-            <Annotations Target="Nautical.Currencies/name">
-                <Annotation Term="Common.Label" String="Name" />
-            </Annotations>
-            <Annotations Target="Nautical.Currencies/descr">
-                <Annotation Term="Common.Label" String="Description" />
-            </Annotations>
-            <Annotations Target="Nautical.Currencies/code">
-                <Annotation Term="Common.Text" Path="name" />
-                <Annotation Term="Common.Label" String="Currency Code" />
-            </Annotations>
-            <Annotations Target="Nautical.Currencies/symbol">
-                <Annotation Term="Common.Label" String="Currency Symbol" />
-            </Annotations>
-            <Annotations Target="Nautical.Currencies/minorUnit">
-                <Annotation Term="Common.Label" String="Currency Minor Unit Fractions" />
-            </Annotations>
-            <Annotations Target="Nautical.Countries">
-                <Annotation Term="UI.Identification">
-                    <Collection>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="name" />
-                        </Record>
-                    </Collection>
-                </Annotation>
-            </Annotations>
-            <Annotations Target="Nautical.Countries/name">
-                <Annotation Term="Common.Label" String="Name" />
-            </Annotations>
-            <Annotations Target="Nautical.Countries/descr">
-                <Annotation Term="Common.Label" String="Description" />
-            </Annotations>
-            <Annotations Target="Nautical.Countries/code">
-                <Annotation Term="Common.Text" Path="name" />
-                <Annotation Term="Common.Label" String="Country/Region Code" />
-            </Annotations>
-            <Annotations Target="Nautical.Languages_texts/locale">
-                <Annotation Term="Common.Label" String="Language Code" />
-            </Annotations>
-            <Annotations Target="Nautical.Languages_texts/name">
-                <Annotation Term="Common.Label" String="Name" />
-            </Annotations>
-            <Annotations Target="Nautical.Languages_texts/descr">
-                <Annotation Term="Common.Label" String="Description" />
-            </Annotations>
-            <Annotations Target="Nautical.Languages_texts/code">
-                <Annotation Term="Common.Text" Path="name" />
-                <Annotation Term="Common.Label" String="Language Code" />
-            </Annotations>
-            <Annotations Target="Nautical.Currencies_texts/locale">
-                <Annotation Term="Common.Label" String="Language Code" />
-            </Annotations>
-            <Annotations Target="Nautical.Currencies_texts/name">
-                <Annotation Term="Common.Label" String="Name" />
-            </Annotations>
-            <Annotations Target="Nautical.Currencies_texts/descr">
-                <Annotation Term="Common.Label" String="Description" />
-            </Annotations>
-            <Annotations Target="Nautical.Currencies_texts/code">
-                <Annotation Term="Common.Text" Path="name" />
-                <Annotation Term="Common.Label" String="Currency Code" />
-            </Annotations>
-            <Annotations Target="Nautical.Countries_texts/locale">
-                <Annotation Term="Common.Label" String="Language Code" />
-            </Annotations>
-            <Annotations Target="Nautical.Countries_texts/name">
-                <Annotation Term="Common.Label" String="Name" />
-            </Annotations>
-            <Annotations Target="Nautical.Countries_texts/descr">
-                <Annotation Term="Common.Label" String="Description" />
-            </Annotations>
-            <Annotations Target="Nautical.Countries_texts/code">
-                <Annotation Term="Common.Text" Path="name" />
-                <Annotation Term="Common.Label" String="Country/Region Code" />
-            </Annotations>
-        </Schema>
-    </edmx:DataServices>
+<edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+</edmx:Reference>
+<edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+<edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+</edmx:Reference>
+<edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+</edmx:Reference>
+<edmx:DataServices>
+<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Nautical">
+<EntityContainer Name="EntityContainer">
+<EntitySet Name="EPATH" EntityType="Nautical.EPATH"/>
+<EntitySet Name="BP_MAS_DASH" EntityType="Nautical.BP_MAS_DASH">
+<NavigationPropertyBinding Path="SPRAS" Target="Languages"/>
+</EntitySet>
+<EntitySet Name="CLASS" EntityType="Nautical.CLASS"/>
+<EntitySet Name="ZCOUNTRY" EntityType="Nautical.ZCOUNTRY"/>
+<EntitySet Name="ZUSER" EntityType="Nautical.ZUSER"/>
+<EntitySet Name="ZVOY_RELVoyage" EntityType="Nautical.ZVOY_RELVoyage"/>
+<EntitySet Name="ZVOY_RELChartering" EntityType="Nautical.ZVOY_RELChartering"/>
+<EntitySet Name="VOYTYP" EntityType="Nautical.VOYTYP"/>
+<EntitySet Name="BidTYP" EntityType="Nautical.BidTYP"/>
+<EntitySet Name="CARTYP" EntityType="Nautical.CARTYP"/>
+<EntitySet Name="CURR" EntityType="Nautical.CURR"/>
+<EntitySet Name="MAS" EntityType="Nautical.MAS"/>
+<EntitySet Name="NAVOYGUOM" EntityType="Nautical.NAVOYGUOM"/>
+<EntitySet Name="NAVOYGC" EntityType="Nautical.NAVOYGC"/>
+<EntitySet Name="EVENT_MAS" EntityType="Nautical.EVENT_MAS"/>
+<EntitySet Name="REF_DOC_S" EntityType="Nautical.REF_DOC_S"/>
+<EntitySet Name="NAVOYGH" EntityType="Nautical.NAVOYGH"/>
+<EntitySet Name="NAVOYGIP" EntityType="Nautical.NAVOYGIP">
+<NavigationPropertyBinding Path="VOYNO" Target="NAVOYGH"/>
+<NavigationPropertyBinding Path="VOYNM" Target="NAVOYGH"/>
+</EntitySet>
+<EntitySet Name="NAVOYGCIT" EntityType="Nautical.NAVOYGCIT">
+<NavigationPropertyBinding Path="VOYNO" Target="NAVOYGH"/>
+<NavigationPropertyBinding Path="PROCOST" Target="Currencies"/>
+</EntitySet>
+<EntitySet Name="VOYAG_APPR" EntityType="Nautical.VOYAG_APPR">
+<NavigationPropertyBinding Path="VOYNO" Target="NAVOYGH"/>
+</EntitySet>
+<EntitySet Name="CHARTREQ" EntityType="Nautical.CHARTREQ">
+<NavigationPropertyBinding Path="VOYNM" Target="NAVOYGH"/>
+</EntitySet>
+<EntitySet Name="ZCHAT_VEN" EntityType="Nautical.ZCHAT_VEN">
+<NavigationPropertyBinding Path="VOYNO" Target="NAVOYGH"/>
+</EntitySet>
+<EntitySet Name="CHAT_APPR" EntityType="Nautical.CHAT_APPR"/>
+<EntitySet Name="VEND_BIDH" EntityType="Nautical.VEND_BIDH">
+<NavigationPropertyBinding Path="VOYNO" Target="NAVOYGH"/>
+</EntitySet>
+<EntitySet Name="VEND_BID" EntityType="Nautical.VEND_BID">
+<NavigationPropertyBinding Path="VOYNO" Target="NAVOYGH"/>
+<NavigationPropertyBinding Path="CVALUE" Target="Currencies"/>
+<NavigationPropertyBinding Path="CUNIT" Target="Currencies"/>
+</EntitySet>
+<EntitySet Name="BID_SCORE" EntityType="Nautical.BID_SCORE">
+<NavigationPropertyBinding Path="WTAGE" Target="Currencies"/>
+</EntitySet>
+<EntitySet Name="VEND_FBID" EntityType="Nautical.VEND_FBID">
+<NavigationPropertyBinding Path="VOYNO" Target="NAVOYGH"/>
+<NavigationPropertyBinding Path="CHRNMIN" Target="BID_SCORE"/>
+<NavigationPropertyBinding Path="CVALUE" Target="Currencies"/>
+<NavigationPropertyBinding Path="CUNIT" Target="Currencies"/>
+</EntitySet>
+<EntitySet Name="ZPORT" EntityType="Nautical.ZPORT">
+<NavigationPropertyBinding Path="COUNTRY" Target="Countries"/>
+<NavigationPropertyBinding Path="COUNTRYN" Target="Countries"/>
+</EntitySet>
+<EntitySet Name="LFA1" EntityType="Nautical.LFA1">
+<NavigationPropertyBinding Path="ADR6" Target="ADR6"/>
+<NavigationPropertyBinding Path="ADRC" Target="ADRC"/>
+</EntitySet>
+<EntitySet Name="Newtable" EntityType="Nautical.Newtable"/>
+<EntitySet Name="ADR6" EntityType="Nautical.ADR6">
+<NavigationPropertyBinding Path="LFA1" Target="LFA1"/>
+</EntitySet>
+<EntitySet Name="ADRC" EntityType="Nautical.ADRC">
+<NavigationPropertyBinding Path="LFA1" Target="LFA1"/>
+</EntitySet>
+<EntitySet Name="BidTypeSet" EntityType="Nautical.BidTypeSet"/>
+<EntitySet Name="ZBTP_NAUTI_CreateVoyage" EntityType="Nautical.ZBTP_NAUTI_CreateVoyage"/>
+<EntitySet Name="ZBTP_NAUTI_Marine_DM" EntityType="Nautical.ZBTP_NAUTI_Marine_DM"/>
+<EntitySet Name="ZBTP_Nauti_Voy_DOC_UPD" EntityType="Nautical.ZBTP_Nauti_Voy_DOC_UPD"/>
+<EntitySet Name="ZBTP_NAUTICAL_MariDistance" EntityType="Nautical.ZBTP_NAUTICAL_MariDistance"/>
+<EntitySet Name="xNAUTIxvend_btp" EntityType="Nautical.xNAUTIxvend_btp"/>
+<EntitySet Name="Languages" EntityType="Nautical.Languages">
+<NavigationPropertyBinding Path="texts" Target="Languages_texts"/>
+<NavigationPropertyBinding Path="localized" Target="Languages_texts"/>
+</EntitySet>
+<EntitySet Name="Currencies" EntityType="Nautical.Currencies">
+<NavigationPropertyBinding Path="texts" Target="Currencies_texts"/>
+<NavigationPropertyBinding Path="localized" Target="Currencies_texts"/>
+</EntitySet>
+<EntitySet Name="Countries" EntityType="Nautical.Countries">
+<NavigationPropertyBinding Path="texts" Target="Countries_texts"/>
+<NavigationPropertyBinding Path="localized" Target="Countries_texts"/>
+</EntitySet>
+<EntitySet Name="Languages_texts" EntityType="Nautical.Languages_texts"/>
+<EntitySet Name="Currencies_texts" EntityType="Nautical.Currencies_texts"/>
+<EntitySet Name="Countries_texts" EntityType="Nautical.Countries_texts"/>
+</EntityContainer>
+<EntityType Name="EPATH">
+<Property Name="IND" Type="Edm.String" MaxLength="1"/>
+<Property Name="API_KEY" Type="Edm.String" MaxLength="150"/>
+<Property Name="API_URL" Type="Edm.String" MaxLength="255"/>
+<Property Name="EPATH" Type="Edm.String" MaxLength="255"/>
+</EntityType>
+<EntityType Name="BP_MAS_DASH">
+<Key>
+<PropertyRef Name="LIFNR"/>
+</Key>
+<Property Name="LIFNR" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="PARTNER_ROLE" Type="Edm.String" MaxLength="7"/>
+<Property Name="ANRED" Type="Edm.String" MaxLength="15"/>
+<Property Name="NAME1" Type="Edm.String" MaxLength="35"/>
+<Property Name="NAME2" Type="Edm.String" MaxLength="35"/>
+<Property Name="NAME3" Type="Edm.String" MaxLength="35"/>
+<Property Name="SORT1" Type="Edm.String" MaxLength="20"/>
+<Property Name="STR_SUPPL1" Type="Edm.String" MaxLength="40"/>
+<Property Name="STR_SUPPL2" Type="Edm.String" MaxLength="40"/>
+<Property Name="HOUSE_NUM1" Type="Edm.String" MaxLength="10"/>
+<Property Name="STRAS" Type="Edm.String" MaxLength="60"/>
+<Property Name="PSTLZ" Type="Edm.String" MaxLength="10"/>
+<Property Name="ORT01" Type="Edm.String" MaxLength="35"/>
+<Property Name="LAND1" Type="Edm.String" MaxLength="3"/>
+<Property Name="REGIO" Type="Edm.String" MaxLength="3"/>
+<Property Name="TIME_ZONE" Type="Edm.String" MaxLength="6"/>
+<NavigationProperty Name="SPRAS" Type="Nautical.Languages">
+<ReferentialConstraint Property="SPRAS_code" ReferencedProperty="code"/>
+</NavigationProperty>
+<Property Name="SPRAS_code" Type="Edm.String" MaxLength="14"/>
+<Property Name="TELF1" Type="Edm.String" MaxLength="16"/>
+<Property Name="TELF2" Type="Edm.String" MaxLength="16"/>
+<Property Name="TELFX" Type="Edm.String" MaxLength="31"/>
+<Property Name="SMTP_ADDR" Type="Edm.String" MaxLength="241"/>
+<Property Name="ERDAT" Type="Edm.Date"/>
+<Property Name="DATE_TO" Type="Edm.Date"/>
+</EntityType>
+<EntityType Name="CLASS">
+<Key>
+<PropertyRef Name="ZF_VALUE"/>
+</Key>
+<Property Name="ZF_VALUE" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="ZF_DESC" Type="Edm.String" MaxLength="50"/>
+</EntityType>
+<EntityType Name="ZCOUNTRY">
+<Key>
+<PropertyRef Name="ZF_VALUE"/>
+</Key>
+<Property Name="ZF_VALUE" Type="Edm.String" MaxLength="50" Nullable="false"/>
+<Property Name="ZF_DESC" Type="Edm.String" MaxLength="50"/>
+</EntityType>
+<EntityType Name="ZUSER">
+<Key>
+<PropertyRef Name="ZUSERNAME"/>
+</Key>
+<Property Name="ZUSERNAME" Type="Edm.String" MaxLength="12" Nullable="false"/>
+<Property Name="ZGROUP" Type="Edm.String" MaxLength="12"/>
+</EntityType>
+<EntityType Name="ZVOY_RELVoyage">
+<Key>
+<PropertyRef Name="ZGROUP"/>
+</Key>
+<Property Name="RELS" Type="Edm.String" MaxLength="10"/>
+<Property Name="VOYTY" Type="Edm.String" MaxLength="4"/>
+<Property Name="VESTY" Type="Edm.String" MaxLength="4"/>
+<Property Name="ZGROUP" Type="Edm.String" MaxLength="12" Nullable="false"/>
+<Property Name="APP1" Type="Edm.String" MaxLength="12"/>
+</EntityType>
+<EntityType Name="ZVOY_RELChartering">
+<Key>
+<PropertyRef Name="APP1"/>
+</Key>
+<Property Name="RELS" Type="Edm.String" MaxLength="10"/>
+<Property Name="VOYTY" Type="Edm.String" MaxLength="4"/>
+<Property Name="VESTY" Type="Edm.String" MaxLength="4"/>
+<Property Name="ZGROUP" Type="Edm.String" MaxLength="12"/>
+<Property Name="APP1" Type="Edm.String" MaxLength="12" Nullable="false"/>
+</EntityType>
+<EntityType Name="VOYTYP">
+<Key>
+<PropertyRef Name="VOYCD"/>
+</Key>
+<Property Name="VOYCD" Type="Edm.String" MaxLength="4" Nullable="false"/>
+<Property Name="VOYDES" Type="Edm.String" MaxLength="40"/>
+</EntityType>
+<EntityType Name="BidTYP">
+<Key>
+<PropertyRef Name="BNAME"/>
+<PropertyRef Name="CODE"/>
+</Key>
+<Property Name="BNAME" Type="Edm.String" MaxLength="12" Nullable="false"/>
+<Property Name="CODE" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="VALUE" Type="Edm.String" MaxLength="50"/>
+<Property Name="CVALUE" Type="Edm.String"/>
+<Property Name="CUNIT" Type="Edm.String"/>
+<Property Name="DATATYPE" Type="Edm.String" MaxLength="3"/>
+<Property Name="TABLENAME" Type="Edm.String" MaxLength="20"/>
+<Property Name="MULTI_CHOICE" Type="Edm.Boolean"/>
+</EntityType>
+<EntityType Name="CARTYP">
+<Key>
+<PropertyRef Name="CARCD"/>
+</Key>
+<Property Name="CARCD" Type="Edm.String" MaxLength="4" Nullable="false"/>
+<Property Name="CARDES" Type="Edm.String" MaxLength="40"/>
+</EntityType>
+<EntityType Name="CURR">
+<Key>
+<PropertyRef Name="NAVOYCUR"/>
+</Key>
+<Property Name="NAVOYCUR" Type="Edm.String" MaxLength="4" Nullable="false"/>
+<Property Name="NAVOYGCURDES" Type="Edm.String" MaxLength="40"/>
+</EntityType>
+<EntityType Name="MAS">
+<Key>
+<PropertyRef Name="BNAME"/>
+<PropertyRef Name="CODE"/>
+</Key>
+<Property Name="BNAME" Type="Edm.String" MaxLength="12" Nullable="false"/>
+<Property Name="CODE" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="VALUE" Type="Edm.String" MaxLength="50"/>
+<Property Name="CVALUE" Type="Edm.String"/>
+<Property Name="CUNIT" Type="Edm.String"/>
+<Property Name="DATATYPE" Type="Edm.String" MaxLength="3"/>
+<Property Name="TABLENAME" Type="Edm.String" MaxLength="20"/>
+<Property Name="MULTI_CHOICE" Type="Edm.Boolean"/>
+</EntityType>
+<EntityType Name="NAVOYGUOM">
+<Key>
+<PropertyRef Name="UOM"/>
+</Key>
+<Property Name="UOM" Type="Edm.String" MaxLength="3" Nullable="false"/>
+<Property Name="UOMDES" Type="Edm.String" MaxLength="30"/>
+</EntityType>
+<EntityType Name="NAVOYGC">
+<Key>
+<PropertyRef Name="COSTCODE"/>
+</Key>
+<Property Name="COSTCODE" Type="Edm.String" MaxLength="4" Nullable="false"/>
+<Property Name="CSTCODES" Type="Edm.String" MaxLength="35"/>
+</EntityType>
+<EntityType Name="EVENT_MAS">
+<Key>
+<PropertyRef Name="EVTTY"/>
+</Key>
+<Property Name="EVTTY" Type="Edm.String" MaxLength="20" Nullable="false"/>
+<Property Name="TEXT" Type="Edm.String" MaxLength="40"/>
+</EntityType>
+<EntityType Name="REF_DOC_S">
+<Property Name="DOCIND" Type="Edm.String" MaxLength="1"/>
+<Property Name="DOCDESC" Type="Edm.String" MaxLength="20"/>
+</EntityType>
+<EntityType Name="NAVOYGH">
+<Property Name="VOYNO" Type="Edm.Int64"/>
+<Property Name="VOYNM" Type="Edm.String" MaxLength="40"/>
+<Property Name="VNOMTK" Type="Edm.String" MaxLength="20"/>
+<Property Name="REFDOC" Type="Edm.String" MaxLength="10"/>
+<Property Name="DOCIND" Type="Edm.Int16"/>
+<Property Name="VESSN" Type="Edm.String" MaxLength="20"/>
+<Property Name="VIMO" Type="Edm.String" MaxLength="20"/>
+<Property Name="CHTYP" Type="Edm.String" MaxLength="5"/>
+<Property Name="CHPNO" Type="Edm.String" MaxLength="10"/>
+<Property Name="CURRKEYS" Type="Edm.String" MaxLength="5"/>
+<Property Name="FRTCO" Type="Edm.Decimal" Scale="variable"/>
+<Property Name="VSTAT" Type="Edm.String" MaxLength="20"/>
+<Property Name="VOYTY" Type="Edm.String" MaxLength="4"/>
+<Property Name="CARTY" Type="Edm.String" MaxLength="4"/>
+<Property Name="CURR" Type="Edm.String" MaxLength="3"/>
+<Property Name="FREGHT" Type="Edm.Decimal" Scale="variable"/>
+<Property Name="PARTY" Type="Edm.String" MaxLength="10"/>
+<Property Name="BIDTYPE" Type="Edm.String" MaxLength="2"/>
+<Property Name="FRCOST" Type="Edm.Decimal" Scale="variable"/>
+<Property Name="FRTU" Type="Edm.String" MaxLength="10"/>
+<Property Name="FRCOST_ACT" Type="Edm.Decimal" Scale="variable"/>
+<Property Name="ZDELETE" Type="Edm.String" MaxLength="1"/>
+<Property Name="REF_VOYNO" Type="Edm.String" MaxLength="20"/>
+</EntityType>
+<EntityType Name="NAVOYGIP">
+<NavigationProperty Name="VOYNO" Type="Nautical.NAVOYGH"/>
+<NavigationProperty Name="VOYNM" Type="Nautical.NAVOYGH"/>
+<Property Name="VLEGN" Type="Edm.Int64"/>
+<Property Name="PORTC" Type="Edm.String" MaxLength="10"/>
+<Property Name="PORTN" Type="Edm.String" MaxLength="10"/>
+<Property Name="LOCNAM" Type="Edm.String" MaxLength="10"/>
+<Property Name="PDIST" Type="Edm.Decimal" Scale="variable"/>
+<Property Name="VSPEED" Type="Edm.Decimal" Scale="variable"/>
+<Property Name="PPDAYS" Type="Edm.Decimal" Scale="variable"/>
+<Property Name="VSDAYS" Type="Edm.Decimal" Scale="variable"/>
+<Property Name="VETAD" Type="Edm.Date"/>
+<Property Name="VETAT" Type="Edm.TimeOfDay"/>
+<Property Name="VETDD" Type="Edm.Date"/>
+<Property Name="VETDT" Type="Edm.TimeOfDay"/>
+<Property Name="VWEAD" Type="Edm.Decimal" Scale="variable"/>
+<Property Name="PSTAT" Type="Edm.String" MaxLength="5"/>
+<Property Name="MATNR" Type="Edm.String" MaxLength="40"/>
+<Property Name="MAKTX" Type="Edm.String" MaxLength="40"/>
+<Property Name="CARGS" Type="Edm.Decimal" Precision="12"/>
+<Property Name="CARGU" Type="Edm.String" MaxLength="10"/>
+<Property Name="OTHCO" Type="Edm.Decimal" Scale="variable"/>
+<Property Name="FRCOST" Type="Edm.Decimal" Scale="variable"/>
+<Property Name="TOTCO" Type="Edm.Decimal" Scale="variable"/>
+<Property Name="combinedKey" Type="Edm.String"/>
+</EntityType>
+<EntityType Name="NAVOYGCIT">
+<Key>
+<PropertyRef Name="VLEGN"/>
+</Key>
+<NavigationProperty Name="VOYNO" Type="Nautical.NAVOYGH"/>
+<Property Name="VOYNO_VOYNO" Type="Edm.Int64"/>
+<Property Name="VLEGN" Type="Edm.Int64" Nullable="false"/>
+<Property Name="COSTCODE" Type="Edm.String" MaxLength="4"/>
+<Property Name="COSTU" Type="Edm.String" MaxLength="10"/>
+<Property Name="PRCUNIT" Type="Edm.String" MaxLength="3"/>
+<NavigationProperty Name="PROCOST" Type="Nautical.Currencies">
+<ReferentialConstraint Property="PROCOST_code" ReferencedProperty="code"/>
+</NavigationProperty>
+<Property Name="PROCOST_code" Type="Edm.String" MaxLength="3"/>
+<Property Name="COSTCURR" Type="Edm.String" MaxLength="5"/>
+<Property Name="CSTCODES" Type="Edm.String" MaxLength="35"/>
+<Property Name="COST_CHECK" Type="Edm.String" MaxLength="1"/>
+</EntityType>
+<EntityType Name="VOYAG_APPR">
+<Key>
+<PropertyRef Name="VREQNO"/>
+</Key>
+<Property Name="VREQNO" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<NavigationProperty Name="VOYNO" Type="Nautical.NAVOYGH"/>
+<Property Name="VOYNO_VOYNO" Type="Edm.Int64"/>
+<Property Name="ZLEVEL" Type="Edm.String" MaxLength="2"/>
+<Property Name="UNAME" Type="Edm.String" MaxLength="12"/>
+<Property Name="ZDATE" Type="Edm.Date"/>
+<Property Name="ZTIME" Type="Edm.TimeOfDay"/>
+<Property Name="ZCOMM" Type="Edm.String" MaxLength="250"/>
+<Property Name="ZACTION" Type="Edm.String" MaxLength="4"/>
+</EntityType>
+<EntityType Name="CHARTREQ">
+<Key>
+<PropertyRef Name="CHRNMEX"/>
+</Key>
+<Property Name="CHRNMIN" Type="Edm.String" MaxLength="10"/>
+<Property Name="CHRNMEX" Type="Edm.String" MaxLength="20" Nullable="false"/>
+<Property Name="CHRDATE" Type="Edm.Date"/>
+<Property Name="CHRCTIME" Type="Edm.TimeOfDay"/>
+<Property Name="CHRQSDATE" Type="Edm.Date"/>
+<Property Name="CHRQSTIME" Type="Edm.TimeOfDay"/>
+<Property Name="CHRQEDATE" Type="Edm.Date"/>
+<Property Name="CHRQETIME" Type="Edm.TimeOfDay"/>
+<Property Name="CHRQDATE" Type="Edm.Date"/>
+<Property Name="CHPREC" Type="Edm.String" MaxLength="4"/>
+<Property Name="CHRPORG" Type="Edm.String" MaxLength="4"/>
+<Property Name="CHRPORGN" Type="Edm.String" MaxLength="4"/>
+<Property Name="CHRPGRP" Type="Edm.String" MaxLength="3"/>
+<Property Name="CHRPGRPN" Type="Edm.String" MaxLength="3"/>
+<Property Name="CHRPLANT" Type="Edm.String" MaxLength="4"/>
+<Property Name="CHRPLANTN" Type="Edm.String" MaxLength="40"/>
+<Property Name="CHREXCR" Type="Edm.Decimal" Precision="14"/>
+<Property Name="CHRPAYT" Type="Edm.String" MaxLength="4"/>
+<Property Name="CHRPAYTD" Type="Edm.String" MaxLength="30"/>
+<Property Name="CHRINCO" Type="Edm.String" MaxLength="3"/>
+<Property Name="CHRINCOL" Type="Edm.String" MaxLength="70"/>
+<Property Name="CIMATER" Type="Edm.String" MaxLength="12"/>
+<Property Name="CIMATDES" Type="Edm.String" MaxLength="40"/>
+<Property Name="CIQTY" Type="Edm.String" MaxLength="17"/>
+<Property Name="CIUOM" Type="Edm.String" MaxLength="3"/>
+<NavigationProperty Name="VOYNM" Type="Nautical.NAVOYGH"/>
+<Property Name="VOYNM_VOYNO" Type="Edm.Int64"/>
+<Property Name="CHRVEN" Type="Edm.String" MaxLength="10"/>
+<Property Name="CHRVENN" Type="Edm.String" MaxLength="35"/>
+<Property Name="CIPREC" Type="Edm.String" MaxLength="5"/>
+<Property Name="ZDELETE" Type="Edm.String" MaxLength="1"/>
+<Property Name="REF_CHRNMI" Type="Edm.String" MaxLength="10"/>
+</EntityType>
+<EntityType Name="ZCHAT_VEN">
+<Key>
+<PropertyRef Name="CHRNMIN"/>
+</Key>
+<Property Name="CHRNMIN" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="LIFNR" Type="Edm.String" MaxLength="10"/>
+<NavigationProperty Name="VOYNO" Type="Nautical.NAVOYGH"/>
+</EntityType>
+<EntityType Name="CHAT_APPR">
+<Key>
+<PropertyRef Name="CREQNO"/>
+</Key>
+<Property Name="CREQNO" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="CHRNMIN" Type="Edm.String" MaxLength="10"/>
+<Property Name="ZLEVEL" Type="Edm.String" MaxLength="2"/>
+<Property Name="UNAME" Type="Edm.String" MaxLength="12"/>
+<Property Name="ZDATE" Type="Edm.Date"/>
+<Property Name="ZTIME" Type="Edm.TimeOfDay"/>
+<Property Name="ZCOMM" Type="Edm.String" MaxLength="250"/>
+<Property Name="ZACTION" Type="Edm.String" MaxLength="4"/>
+</EntityType>
+<EntityType Name="VEND_BIDH">
+<Key>
+<PropertyRef Name="VOYNO_VOYNO"/>
+</Key>
+<NavigationProperty Name="VOYNO" Type="Nautical.NAVOYGH"/>
+<Property Name="VOYNO_VOYNO" Type="Edm.Int64" Nullable="false"/>
+<Property Name="LIFNR" Type="Edm.String" MaxLength="20"/>
+<Property Name="CHRNMIN" Type="Edm.String" MaxLength="10"/>
+<Property Name="VIMONO" Type="Edm.String" MaxLength="10"/>
+<Property Name="VNAME" Type="Edm.String" MaxLength="40"/>
+<Property Name="BIDDATE" Type="Edm.Date"/>
+<Property Name="BIDTIME" Type="Edm.TimeOfDay"/>
+</EntityType>
+<EntityType Name="VEND_BID">
+<Key>
+<PropertyRef Name="VOYNO_VOYNO"/>
+<PropertyRef Name="CHARNMIN"/>
+</Key>
+<NavigationProperty Name="VOYNO" Type="Nautical.NAVOYGH"/>
+<Property Name="VOYNO_VOYNO" Type="Edm.Int64" Nullable="false"/>
+<Property Name="LIFNR" Type="Edm.String" MaxLength="10"/>
+<Property Name="ZCODE" Type="Edm.String" MaxLength="10"/>
+<Property Name="VALUE" Type="Edm.String" MaxLength="50"/>
+<NavigationProperty Name="CVALUE" Type="Nautical.Currencies">
+<ReferentialConstraint Property="CVALUE_code" ReferencedProperty="code"/>
+</NavigationProperty>
+<Property Name="CVALUE_code" Type="Edm.String" MaxLength="3"/>
+<NavigationProperty Name="CUNIT" Type="Nautical.Currencies">
+<ReferentialConstraint Property="CUNIT_code" ReferencedProperty="code"/>
+</NavigationProperty>
+<Property Name="CUNIT_code" Type="Edm.String" MaxLength="3"/>
+<Property Name="CHARNMIN" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="CODE_DESC" Type="Edm.String" MaxLength="50"/>
+<Property Name="BIDDATE" Type="Edm.Date"/>
+<Property Name="BIDTIME" Type="Edm.TimeOfDay"/>
+<Property Name="ZCOM" Type="Edm.String" MaxLength="250"/>
+</EntityType>
+<EntityType Name="BID_SCORE">
+<Key>
+<PropertyRef Name="CHRNMIN"/>
+</Key>
+<Property Name="CHRNMIN" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="CODE" Type="Edm.String" MaxLength="10"/>
+<Property Name="CODE_DESC" Type="Edm.String" MaxLength="50"/>
+<NavigationProperty Name="WTAGE" Type="Nautical.Currencies">
+<ReferentialConstraint Property="WTAGE_code" ReferencedProperty="code"/>
+</NavigationProperty>
+<Property Name="WTAGE_code" Type="Edm.String" MaxLength="3"/>
+<Property Name="SCORE" Type="Edm.Int64"/>
+<Property Name="VALUE" Type="Edm.String" MaxLength="50"/>
+</EntityType>
+<EntityType Name="VEND_FBID">
+<Key>
+<PropertyRef Name="VOYNO_VOYNO"/>
+</Key>
+<NavigationProperty Name="VOYNO" Type="Nautical.NAVOYGH"/>
+<Property Name="VOYNO_VOYNO" Type="Edm.Int64" Nullable="false"/>
+<Property Name="LIFNR" Type="Edm.String" MaxLength="10"/>
+<Property Name="ZCODE" Type="Edm.String" MaxLength="10"/>
+<Property Name="BIDDATE" Type="Edm.Date"/>
+<Property Name="BIDTIME" Type="Edm.TimeOfDay"/>
+<NavigationProperty Name="CHRNMIN" Type="Nautical.BID_SCORE">
+<ReferentialConstraint Property="CHRNMIN_CHRNMIN" ReferencedProperty="CHRNMIN"/>
+</NavigationProperty>
+<Property Name="CHRNMIN_CHRNMIN" Type="Edm.String" MaxLength="10"/>
+<Property Name="CODE_DESC" Type="Edm.String" MaxLength="50"/>
+<Property Name="VALUE" Type="Edm.String" MaxLength="50"/>
+<NavigationProperty Name="CVALUE" Type="Nautical.Currencies">
+<ReferentialConstraint Property="CVALUE_code" ReferencedProperty="code"/>
+</NavigationProperty>
+<Property Name="CVALUE_code" Type="Edm.String" MaxLength="3"/>
+<NavigationProperty Name="CUNIT" Type="Nautical.Currencies">
+<ReferentialConstraint Property="CUNIT_code" ReferencedProperty="code"/>
+</NavigationProperty>
+<Property Name="CUNIT_code" Type="Edm.String" MaxLength="3"/>
+<Property Name="CHRQSDATE" Type="Edm.Date"/>
+<Property Name="CHRQSTIME" Type="Edm.TimeOfDay"/>
+<Property Name="CHRQEDATE" Type="Edm.Date"/>
+<Property Name="CHRQETIME" Type="Edm.TimeOfDay"/>
+<Property Name="DONE_BY" Type="Edm.String" MaxLength="1"/>
+<Property Name="UNAME" Type="Edm.String" MaxLength="12"/>
+<Property Name="STAT" Type="Edm.String" MaxLength="4"/>
+<Property Name="ZMODE" Type="Edm.String" MaxLength="4"/>
+<Property Name="ZCOMM" Type="Edm.String" MaxLength="250"/>
+</EntityType>
+<EntityType Name="ZPORT">
+<Key>
+<PropertyRef Name="ZF_VALUE"/>
+</Key>
+<Property Name="ZF_VALUE" Type="Edm.String" MaxLength="50" Nullable="false"/>
+<Property Name="ZF_DESC" Type="Edm.String" MaxLength="50"/>
+<NavigationProperty Name="COUNTRY" Type="Nautical.Countries">
+<ReferentialConstraint Property="COUNTRY_code" ReferencedProperty="code"/>
+</NavigationProperty>
+<Property Name="COUNTRY_code" Type="Edm.String" MaxLength="3"/>
+<NavigationProperty Name="COUNTRYN" Type="Nautical.Countries">
+<ReferentialConstraint Property="COUNTRYN_code" ReferencedProperty="code"/>
+</NavigationProperty>
+<Property Name="COUNTRYN_code" Type="Edm.String" MaxLength="3"/>
+</EntityType>
+<EntityType Name="LFA1">
+<Property Name="LIFNR" Type="Edm.String" MaxLength="10"/>
+<Property Name="ANRED" Type="Edm.String" MaxLength="15"/>
+<Property Name="ADRNR" Type="Edm.String" MaxLength="10"/>
+<Property Name="NAME1" Type="Edm.String" MaxLength="35"/>
+<Property Name="NAME2" Type="Edm.String" MaxLength="35"/>
+<Property Name="NAME3" Type="Edm.String" MaxLength="35"/>
+<Property Name="STRAS" Type="Edm.String" MaxLength="35"/>
+<Property Name="PSTLZ" Type="Edm.String" MaxLength="10"/>
+<Property Name="ORT01" Type="Edm.String" MaxLength="35"/>
+<Property Name="LAND1" Type="Edm.String" MaxLength="3"/>
+<Property Name="REGIO" Type="Edm.String" MaxLength="3"/>
+<Property Name="TELF1" Type="Edm.String" MaxLength="16"/>
+<Property Name="TELF2" Type="Edm.String" MaxLength="16"/>
+<Property Name="TELFX" Type="Edm.String" MaxLength="31"/>
+<Property Name="ERDAT" Type="Edm.Date"/>
+<Property Name="SPRAS" Type="Edm.String" MaxLength="15"/>
+<NavigationProperty Name="ADR6" Type="Nautical.ADR6" Partner="LFA1"/>
+<NavigationProperty Name="ADRC" Type="Nautical.ADRC" Partner="LFA1"/>
+</EntityType>
+<EntityType Name="Newtable">
+<Key>
+<PropertyRef Name="ID"/>
+<PropertyRef Name="LIFNR"/>
+</Key>
+<Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+<Property Name="LIFNR" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="ANRED" Type="Edm.String" MaxLength="15"/>
+<Property Name="ADRNR" Type="Edm.String" MaxLength="100"/>
+<Property Name="NAME1" Type="Edm.String" MaxLength="35"/>
+<Property Name="STREET" Type="Edm.String" MaxLength="60"/>
+<Property Name="PSTLZ" Type="Edm.String" MaxLength="10"/>
+<Property Name="ORT01" Type="Edm.String" MaxLength="35"/>
+<Property Name="LAND1" Type="Edm.String" MaxLength="3"/>
+<Property Name="REGIO" Type="Edm.String" MaxLength="3"/>
+<Property Name="TELF1" Type="Edm.String" MaxLength="16"/>
+<Property Name="TELF2" Type="Edm.String" MaxLength="16"/>
+<Property Name="TELFX" Type="Edm.String" MaxLength="31"/>
+<Property Name="ERDAT" Type="Edm.Date"/>
+<Property Name="SPRAS" Type="Edm.String" MaxLength="15"/>
+<Property Name="SMTP_ADNR" Type="Edm.String" MaxLength="241"/>
+<Property Name="DATE_TO" Type="Edm.Date"/>
+<Property Name="STR_SUPPL1" Type="Edm.String" MaxLength="40"/>
+<Property Name="STR_SUPPL2" Type="Edm.String" MaxLength="40"/>
+<Property Name="SORT1" Type="Edm.String" MaxLength="20"/>
+<Property Name="TIME_ZONE" Type="Edm.String" MaxLength="6"/>
+<Property Name="HOUSE_NUM1" Type="Edm.String" MaxLength="10"/>
+</EntityType>
+<EntityType Name="ADR6">
+<Property Name="ADDRNUMBER" Type="Edm.String" MaxLength="10"/>
+<Property Name="SMTP_ADNR" Type="Edm.String" MaxLength="241"/>
+<NavigationProperty Name="LFA1" Type="Nautical.LFA1" Partner="ADR6"/>
+</EntityType>
+<EntityType Name="ADRC">
+<Property Name="ADDRNUMBER" Type="Edm.String" MaxLength="10"/>
+<Property Name="DATE_TO" Type="Edm.Date"/>
+<Property Name="STR_SUPPL1" Type="Edm.String" MaxLength="40"/>
+<Property Name="STR_SUPPL2" Type="Edm.String" MaxLength="40"/>
+<Property Name="STREET" Type="Edm.String" MaxLength="60"/>
+<Property Name="SORT1" Type="Edm.String" MaxLength="20"/>
+<Property Name="TIME_ZONE" Type="Edm.String" MaxLength="6"/>
+<Property Name="HOUSE_NUM1" Type="Edm.String" MaxLength="10"/>
+<NavigationProperty Name="LFA1" Type="Nautical.LFA1" Partner="ADRC"/>
+</EntityType>
+<EntityType Name="BidTypeSet">
+<Key>
+<PropertyRef Name="DomvalueL"/>
+</Key>
+<Property Name="DomvalueL" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="Ddtext" Type="Edm.String" MaxLength="60" Nullable="false"/>
+</EntityType>
+<EntityType Name="ZBTP_NAUTI_CreateVoyage">
+<Key>
+<PropertyRef Name="Vlegn"/>
+</Key>
+<Property Name="Vlegn" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="Portc" Type="Edm.String" MaxLength="10"/>
+<Property Name="Portn" Type="Edm.String" MaxLength="25"/>
+<Property Name="Pdist" Type="Edm.Decimal" Scale="3" Precision="13"/>
+<Property Name="Medst" Type="Edm.String" MaxLength="3"/>
+<Property Name="Vspeed" Type="Edm.Decimal" Scale="3" Precision="17"/>
+<Property Name="Ppdays" Type="Edm.Decimal" Scale="3" Precision="6"/>
+<Property Name="Vsdays" Type="Edm.Decimal" Scale="3" Precision="7"/>
+<Property Name="Vetad" Type="Edm.Date"/>
+<Property Name="Vetat" Type="Edm.TimeOfDay"/>
+<Property Name="Vetdd" Type="Edm.Date"/>
+<Property Name="Vetdt" Type="Edm.TimeOfDay"/>
+<Property Name="Vwead" Type="Edm.String" MaxLength="10"/>
+<Property Name="Pstat" Type="Edm.String" MaxLength="5"/>
+<Property Name="Matnr" Type="Edm.String" MaxLength="40"/>
+<Property Name="Maktx" Type="Edm.String" MaxLength="40"/>
+<Property Name="Cargs" Type="Edm.Decimal" Scale="0" Precision="12"/>
+<Property Name="Cargu" Type="Edm.String" MaxLength="3"/>
+<Property Name="Othco" Type="Edm.Decimal" Scale="3" Precision="24"/>
+<Property Name="Frcost" Type="Edm.Decimal" Scale="3" Precision="24"/>
+<Property Name="Totco" Type="Edm.Decimal" Scale="3" Precision="24"/>
+</EntityType>
+<EntityType Name="ZBTP_NAUTI_Marine_DM">
+<Key>
+<PropertyRef Name="start_port"/>
+<PropertyRef Name="end_port"/>
+<PropertyRef Name="route_id"/>
+<PropertyRef Name="location_id"/>
+</Key>
+<Property Name="start_port" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="end_port" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="route_id" Type="Edm.String" MaxLength="2" Nullable="false"/>
+<Property Name="location_id" Type="Edm.String" MaxLength="3" Nullable="false"/>
+<Property Name="latitude" Type="Edm.String" MaxLength="10"/>
+<Property Name="longitude" Type="Edm.String" MaxLength="10"/>
+</EntityType>
+<EntityType Name="ZBTP_Nauti_Voy_DOC_UPD">
+<Key>
+<PropertyRef Name="sl_no"/>
+<PropertyRef Name="voyno"/>
+<PropertyRef Name="filename"/>
+</Key>
+<Property Name="sl_no" Type="Edm.String" MaxLength="2" Nullable="false"/>
+<Property Name="voyno" Type="Edm.String" MaxLength="20" Nullable="false"/>
+<Property Name="filename" Type="Edm.String" MaxLength="100" Nullable="false"/>
+<Property Name="file_content" Type="Edm.Binary"/>
+</EntityType>
+<EntityType Name="ZBTP_NAUTICAL_MariDistance">
+<Key>
+<PropertyRef Name="from_port"/>
+<PropertyRef Name="to_port"/>
+<PropertyRef Name="distance"/>
+</Key>
+<Property Name="from_port" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="to_port" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="distance" Type="Edm.String" MaxLength="10" Nullable="false"/>
+</EntityType>
+<EntityType Name="xNAUTIxvend_btp">
+<Key>
+<PropertyRef Name="Lifnr"/>
+</Key>
+<Property Name="Lifnr" Type="Edm.String" MaxLength="10" Nullable="false"/>
+<Property Name="Land1" Type="Edm.String" MaxLength="3"/>
+<Property Name="Name1" Type="Edm.String" MaxLength="35"/>
+<Property Name="Name2" Type="Edm.String" MaxLength="35"/>
+<Property Name="Name3" Type="Edm.String" MaxLength="35"/>
+<Property Name="Name4" Type="Edm.String" MaxLength="35"/>
+<Property Name="Ort01" Type="Edm.String" MaxLength="35"/>
+<Property Name="Ort02" Type="Edm.String" MaxLength="35"/>
+<Property Name="Pfach" Type="Edm.String" MaxLength="10"/>
+<Property Name="Pstl2" Type="Edm.String" MaxLength="10"/>
+<Property Name="Pstlz" Type="Edm.String" MaxLength="10"/>
+<Property Name="Regio" Type="Edm.String" MaxLength="3"/>
+<Property Name="Sortl" Type="Edm.String" MaxLength="10"/>
+<Property Name="Stras" Type="Edm.String" MaxLength="35"/>
+<Property Name="Adrnr" Type="Edm.String" MaxLength="10"/>
+<Property Name="Mcod1" Type="Edm.String" MaxLength="25"/>
+<Property Name="Mcod2" Type="Edm.String" MaxLength="25"/>
+<Property Name="Mcod3" Type="Edm.String" MaxLength="25"/>
+<Property Name="Anred" Type="Edm.String" MaxLength="15"/>
+<Property Name="Bahns" Type="Edm.String" MaxLength="25"/>
+<Property Name="Bbbnr" Type="Edm.String" MaxLength="7"/>
+<Property Name="Bbsnr" Type="Edm.String" MaxLength="5"/>
+<Property Name="Begru" Type="Edm.String" MaxLength="4"/>
+<Property Name="Brsch" Type="Edm.String" MaxLength="4"/>
+<Property Name="Bubkz" Type="Edm.String" MaxLength="1"/>
+<Property Name="Datlt" Type="Edm.String" MaxLength="14"/>
+<Property Name="Dtams" Type="Edm.String" MaxLength="1"/>
+<Property Name="Dtaws" Type="Edm.String" MaxLength="2"/>
+<Property Name="Erdat" Type="Edm.Date"/>
+<Property Name="Ernam" Type="Edm.String" MaxLength="12"/>
+<Property Name="Esrnr" Type="Edm.String" MaxLength="11"/>
+<Property Name="Konzs" Type="Edm.String" MaxLength="10"/>
+<Property Name="Ktokk" Type="Edm.String" MaxLength="4"/>
+<Property Name="Kunnr" Type="Edm.String" MaxLength="10"/>
+<Property Name="Lnrza" Type="Edm.String" MaxLength="10"/>
+<Property Name="Loevm" Type="Edm.Boolean"/>
+<Property Name="Sperr" Type="Edm.Boolean"/>
+<Property Name="Sperm" Type="Edm.Boolean"/>
+<Property Name="Spras" Type="Edm.String" MaxLength="2"/>
+<Property Name="Stcd1" Type="Edm.String" MaxLength="16"/>
+<Property Name="Stcd2" Type="Edm.String" MaxLength="11"/>
+<Property Name="Stkza" Type="Edm.String" MaxLength="1"/>
+<Property Name="Stkzu" Type="Edm.Boolean"/>
+<Property Name="Telbx" Type="Edm.String" MaxLength="15"/>
+<Property Name="Telf1" Type="Edm.String" MaxLength="16"/>
+<Property Name="Telf2" Type="Edm.String" MaxLength="16"/>
+<Property Name="Telfx" Type="Edm.String" MaxLength="31"/>
+<Property Name="Teltx" Type="Edm.String" MaxLength="30"/>
+<Property Name="Telx1" Type="Edm.String" MaxLength="30"/>
+<Property Name="Xcpdk" Type="Edm.Boolean"/>
+<Property Name="Xzemp" Type="Edm.Boolean"/>
+<Property Name="Vbund" Type="Edm.String" MaxLength="6"/>
+<Property Name="Fiskn" Type="Edm.String" MaxLength="10"/>
+<Property Name="Stceg" Type="Edm.String" MaxLength="20"/>
+<Property Name="Stkzn" Type="Edm.String" MaxLength="1"/>
+<Property Name="Sperq" Type="Edm.String" MaxLength="2"/>
+<Property Name="Gbort" Type="Edm.String" MaxLength="25"/>
+<Property Name="Gbdat" Type="Edm.Date"/>
+<Property Name="Sexkz" Type="Edm.String" MaxLength="1"/>
+<Property Name="Kraus" Type="Edm.String" MaxLength="11"/>
+<Property Name="Revdb" Type="Edm.Date"/>
+<Property Name="Qssys" Type="Edm.String" MaxLength="4"/>
+<Property Name="Ktock" Type="Edm.String" MaxLength="4"/>
+<Property Name="Pfort" Type="Edm.String" MaxLength="35"/>
+<Property Name="Werks" Type="Edm.String" MaxLength="4"/>
+<Property Name="Ltsna" Type="Edm.Boolean"/>
+<Property Name="Werkr" Type="Edm.Boolean"/>
+<Property Name="Plkal" Type="Edm.String" MaxLength="2"/>
+<Property Name="Duefl" Type="Edm.String" MaxLength="1"/>
+<Property Name="Txjcd" Type="Edm.String" MaxLength="15"/>
+<Property Name="Sperz" Type="Edm.Boolean"/>
+<Property Name="Scacd" Type="Edm.String" MaxLength="4"/>
+<Property Name="Sfrgr" Type="Edm.String" MaxLength="4"/>
+<Property Name="Lzone" Type="Edm.String" MaxLength="10"/>
+<Property Name="Xlfza" Type="Edm.Boolean"/>
+<Property Name="Dlgrp" Type="Edm.String" MaxLength="4"/>
+<Property Name="Fityp" Type="Edm.String" MaxLength="2"/>
+<Property Name="Stcdt" Type="Edm.String" MaxLength="2"/>
+<Property Name="Regss" Type="Edm.Boolean"/>
+<Property Name="Actss" Type="Edm.String" MaxLength="3"/>
+<Property Name="Stcd3" Type="Edm.String" MaxLength="18"/>
+<Property Name="Stcd4" Type="Edm.String" MaxLength="18"/>
+<Property Name="Stcd5" Type="Edm.String" MaxLength="60"/>
+<Property Name="Ipisp" Type="Edm.Boolean"/>
+<Property Name="Taxbs" Type="Edm.String" MaxLength="1"/>
+<Property Name="Profs" Type="Edm.String" MaxLength="30"/>
+<Property Name="Stgdl" Type="Edm.String" MaxLength="2"/>
+<Property Name="Emnfr" Type="Edm.String" MaxLength="10"/>
+<Property Name="Lfurl" Type="Edm.String" MaxLength="132"/>
+<Property Name="J1kfrepre" Type="Edm.String" MaxLength="10"/>
+<Property Name="J1kftbus" Type="Edm.String" MaxLength="30"/>
+<Property Name="J1kftind" Type="Edm.String" MaxLength="30"/>
+<Property Name="Confs" Type="Edm.String" MaxLength="1"/>
+<Property Name="Updat" Type="Edm.Date"/>
+<Property Name="Uptim" Type="Edm.TimeOfDay"/>
+<Property Name="Nodel" Type="Edm.Boolean"/>
+<Property Name="Qssysdat" Type="Edm.Date"/>
+<Property Name="Podkzb" Type="Edm.String" MaxLength="1"/>
+<Property Name="Fisku" Type="Edm.String" MaxLength="10"/>
+<Property Name="Stenr" Type="Edm.String" MaxLength="18"/>
+<Property Name="CarrierConf" Type="Edm.String" MaxLength="1"/>
+<Property Name="MinComp" Type="Edm.Boolean"/>
+<Property Name="TermLi" Type="Edm.Boolean"/>
+<Property Name="CrcNum" Type="Edm.String" MaxLength="25"/>
+<Property Name="CvpXblck" Type="Edm.String" MaxLength="1"/>
+<Property Name="Rg" Type="Edm.String" MaxLength="11"/>
+<Property Name="Exp" Type="Edm.String" MaxLength="3"/>
+<Property Name="Uf" Type="Edm.String" MaxLength="2"/>
+<Property Name="Rgdate" Type="Edm.Date"/>
+<Property Name="Ric" Type="Edm.String" MaxLength="11"/>
+<Property Name="Rne" Type="Edm.String" MaxLength="10"/>
+<Property Name="Rnedate" Type="Edm.Date"/>
+<Property Name="Cnae" Type="Edm.String" MaxLength="7"/>
+<Property Name="Legalnat" Type="Edm.String" MaxLength="4"/>
+<Property Name="Crtn" Type="Edm.String" MaxLength="1"/>
+<Property Name="Icmstaxpay" Type="Edm.String" MaxLength="2"/>
+<Property Name="Indtyp" Type="Edm.String" MaxLength="2"/>
+<Property Name="Tdt" Type="Edm.String" MaxLength="2"/>
+<Property Name="Comsize" Type="Edm.String" MaxLength="2"/>
+<Property Name="Decregpc" Type="Edm.String" MaxLength="2"/>
+<Property Name="Lfa1EewSupp" Type="Edm.String" MaxLength="1"/>
+<Property Name="JScCapital" Type="Edm.Decimal" Scale="3" Precision="16"/>
+<Property Name="JScCurrency" Type="Edm.String" MaxLength="5"/>
+<Property Name="Alc" Type="Edm.String" MaxLength="8"/>
+<Property Name="PmtOffice" Type="Edm.String" MaxLength="5"/>
+<Property Name="PpaRelevant" Type="Edm.Boolean"/>
+<Property Name="Psofg" Type="Edm.String" MaxLength="10"/>
+<Property Name="Psois" Type="Edm.String" MaxLength="20"/>
+<Property Name="Pson1" Type="Edm.String" MaxLength="35"/>
+<Property Name="Pson2" Type="Edm.String" MaxLength="35"/>
+<Property Name="Pson3" Type="Edm.String" MaxLength="35"/>
+<Property Name="Psovn" Type="Edm.String" MaxLength="35"/>
+<Property Name="Psotl" Type="Edm.String" MaxLength="20"/>
+<Property Name="Psohs" Type="Edm.String" MaxLength="6"/>
+<Property Name="Psost" Type="Edm.String" MaxLength="28"/>
+<Property Name="BorgrDatun" Type="Edm.Date"/>
+<Property Name="BorgrYeaun" Type="Edm.Boolean"/>
+<Property Name="Addr2Street" Type="Edm.String" MaxLength="60"/>
+<Property Name="Addr2HouseNum" Type="Edm.String" MaxLength="10"/>
+<Property Name="Addr2Post" Type="Edm.String" MaxLength="10"/>
+<Property Name="Addr2City" Type="Edm.String" MaxLength="40"/>
+<Property Name="Addr2Country" Type="Edm.String" MaxLength="3"/>
+<Property Name="Categ" Type="Edm.String" MaxLength="12"/>
+<Property Name="PartnerName" Type="Edm.String" MaxLength="30"/>
+<Property Name="PartnerUtr" Type="Edm.String" MaxLength="20"/>
+<Property Name="Status" Type="Edm.String" MaxLength="3"/>
+<Property Name="Vfnum" Type="Edm.String" MaxLength="20"/>
+<Property Name="Vfnid" Type="Edm.String" MaxLength="1"/>
+<Property Name="Crn" Type="Edm.String" MaxLength="8"/>
+<Property Name="J1iexcd" Type="Edm.String" MaxLength="40"/>
+<Property Name="J1iexrn" Type="Edm.String" MaxLength="40"/>
+<Property Name="J1iexrg" Type="Edm.String" MaxLength="60"/>
+<Property Name="J1iexdi" Type="Edm.String" MaxLength="60"/>
+<Property Name="J1iexco" Type="Edm.String" MaxLength="60"/>
+<Property Name="J1icstno" Type="Edm.String" MaxLength="40"/>
+<Property Name="J1ilstno" Type="Edm.String" MaxLength="40"/>
+<Property Name="J1ipanno" Type="Edm.String" MaxLength="40"/>
+<Property Name="J1iexcive" Type="Edm.String" MaxLength="1"/>
+<Property Name="J1issist" Type="Edm.String" MaxLength="1"/>
+<Property Name="J1ivtyp" Type="Edm.String" MaxLength="2"/>
+<Property Name="J1ivencre" Type="Edm.Boolean"/>
+<Property Name="Aedat" Type="Edm.Date"/>
+<Property Name="Usnam" Type="Edm.String" MaxLength="12"/>
+<Property Name="J1isern" Type="Edm.String" MaxLength="40"/>
+<Property Name="J1ipanref" Type="Edm.String" MaxLength="40"/>
+<Property Name="J1ipanvaldt" Type="Edm.Date"/>
+<Property Name="J1iCustoms" Type="Edm.Boolean"/>
+<Property Name="J1idedref" Type="Edm.String" MaxLength="10"/>
+<Property Name="VenClass" Type="Edm.String" MaxLength="1"/>
+<Property Name="EntyCd" Type="Edm.String" MaxLength="2"/>
+<Property Name="ResCntry" Type="Edm.String" MaxLength="3"/>
+<Property Name="ResRegion" Type="Edm.String" MaxLength="3"/>
+<Property Name="Ccode" Type="Edm.String" MaxLength="4"/>
+<Property Name="Entpub" Type="Edm.Boolean"/>
+<Property Name="Escrit" Type="Edm.String" MaxLength="80"/>
+<Property Name="Dvalss" Type="Edm.Date"/>
+<Property Name="Frmcss" Type="Edm.String" MaxLength="50"/>
+<Property Name="Codcae" Type="Edm.String" MaxLength="5"/>
+<Property Name="Ausdiv" Type="Edm.Boolean"/>
+<Property Name="TransportChain" Type="Edm.String" MaxLength="10"/>
+<Property Name="StagingTime" Type="Edm.Decimal" Scale="0" Precision="3"/>
+<Property Name="SchedulingType" Type="Edm.String" MaxLength="1"/>
+<Property Name="SubmiRelevant" Type="Edm.Boolean"/>
+</EntityType>
+<EntityType Name="Languages">
+<Key>
+<PropertyRef Name="code"/>
+</Key>
+<Property Name="name" Type="Edm.String" MaxLength="255"/>
+<Property Name="descr" Type="Edm.String" MaxLength="1000"/>
+<Property Name="code" Type="Edm.String" MaxLength="14" Nullable="false"/>
+<NavigationProperty Name="texts" Type="Collection(Nautical.Languages_texts)">
+<OnDelete Action="Cascade"/>
+</NavigationProperty>
+<NavigationProperty Name="localized" Type="Nautical.Languages_texts">
+<ReferentialConstraint Property="code" ReferencedProperty="code"/>
+</NavigationProperty>
+</EntityType>
+<EntityType Name="Currencies">
+<Key>
+<PropertyRef Name="code"/>
+</Key>
+<Property Name="name" Type="Edm.String" MaxLength="255"/>
+<Property Name="descr" Type="Edm.String" MaxLength="1000"/>
+<Property Name="code" Type="Edm.String" MaxLength="3" Nullable="false"/>
+<Property Name="symbol" Type="Edm.String" MaxLength="5"/>
+<Property Name="minorUnit" Type="Edm.Int16"/>
+<NavigationProperty Name="texts" Type="Collection(Nautical.Currencies_texts)">
+<OnDelete Action="Cascade"/>
+</NavigationProperty>
+<NavigationProperty Name="localized" Type="Nautical.Currencies_texts">
+<ReferentialConstraint Property="code" ReferencedProperty="code"/>
+</NavigationProperty>
+</EntityType>
+<EntityType Name="Countries">
+<Key>
+<PropertyRef Name="code"/>
+</Key>
+<Property Name="name" Type="Edm.String" MaxLength="255"/>
+<Property Name="descr" Type="Edm.String" MaxLength="1000"/>
+<Property Name="code" Type="Edm.String" MaxLength="3" Nullable="false"/>
+<NavigationProperty Name="texts" Type="Collection(Nautical.Countries_texts)">
+<OnDelete Action="Cascade"/>
+</NavigationProperty>
+<NavigationProperty Name="localized" Type="Nautical.Countries_texts">
+<ReferentialConstraint Property="code" ReferencedProperty="code"/>
+</NavigationProperty>
+</EntityType>
+<EntityType Name="Languages_texts">
+<Key>
+<PropertyRef Name="locale"/>
+<PropertyRef Name="code"/>
+</Key>
+<Property Name="locale" Type="Edm.String" MaxLength="14" Nullable="false"/>
+<Property Name="name" Type="Edm.String" MaxLength="255"/>
+<Property Name="descr" Type="Edm.String" MaxLength="1000"/>
+<Property Name="code" Type="Edm.String" MaxLength="14" Nullable="false"/>
+</EntityType>
+<EntityType Name="Currencies_texts">
+<Key>
+<PropertyRef Name="locale"/>
+<PropertyRef Name="code"/>
+</Key>
+<Property Name="locale" Type="Edm.String" MaxLength="14" Nullable="false"/>
+<Property Name="name" Type="Edm.String" MaxLength="255"/>
+<Property Name="descr" Type="Edm.String" MaxLength="1000"/>
+<Property Name="code" Type="Edm.String" MaxLength="3" Nullable="false"/>
+</EntityType>
+<EntityType Name="Countries_texts">
+<Key>
+<PropertyRef Name="locale"/>
+<PropertyRef Name="code"/>
+</Key>
+<Property Name="locale" Type="Edm.String" MaxLength="14" Nullable="false"/>
+<Property Name="name" Type="Edm.String" MaxLength="255"/>
+<Property Name="descr" Type="Edm.String" MaxLength="1000"/>
+<Property Name="code" Type="Edm.String" MaxLength="3" Nullable="false"/>
+</EntityType>
+<Annotations Target="Nautical.BP_MAS_DASH/LIFNR">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.BP_MAS_DASH/SPRAS">
+<Annotation Term="Common.Label" String="Language"/>
+<Annotation Term="Core.Description" String="Language code as specified by ISO 639-1"/>
+</Annotations>
+<Annotations Target="Nautical.BP_MAS_DASH/SPRAS_code">
+<Annotation Term="Common.Label" String="Language"/>
+<Annotation Term="Common.ValueList">
+<Record Type="Common.ValueListType">
+<PropertyValue Property="Label" String="Language"/>
+<PropertyValue Property="CollectionPath" String="Languages"/>
+<PropertyValue Property="Parameters">
+<Collection>
+<Record Type="Common.ValueListParameterInOut">
+<PropertyValue Property="LocalDataProperty" PropertyPath="SPRAS_code"/>
+<PropertyValue Property="ValueListProperty" String="code"/>
+</Record>
+<Record Type="Common.ValueListParameterDisplayOnly">
+<PropertyValue Property="ValueListProperty" String="name"/>
+</Record>
+</Collection>
+</PropertyValue>
+</Record>
+</Annotation>
+<Annotation Term="Core.Description" String="Language code as specified by ISO 639-1"/>
+</Annotations>
+<Annotations Target="Nautical.ZUSER/ZUSERNAME">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.ZVOY_RELVoyage/ZGROUP">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.ZVOY_RELVoyage/APP1">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.ZVOY_RELChartering/APP1">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.VOYTYP/VOYCD">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.VOYTYP/VOYDES">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.BidTYP/BNAME">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.BidTYP/CODE">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.CARTYP/CARCD">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.CARTYP/CARDES">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.MAS/BNAME">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.MAS/CODE">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.NAVOYGC/COSTCODE">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.EVENT_MAS/EVTTY">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.NAVOYGCIT/PROCOST">
+<Annotation Term="Common.Label" String="Currency"/>
+<Annotation Term="Core.Description" String="Currency code as specified by ISO 4217"/>
+</Annotations>
+<Annotations Target="Nautical.NAVOYGCIT/PROCOST_code">
+<Annotation Term="Common.Label" String="Currency"/>
+<Annotation Term="Common.ValueList">
+<Record Type="Common.ValueListType">
+<PropertyValue Property="Label" String="Currency"/>
+<PropertyValue Property="CollectionPath" String="Currencies"/>
+<PropertyValue Property="Parameters">
+<Collection>
+<Record Type="Common.ValueListParameterInOut">
+<PropertyValue Property="LocalDataProperty" PropertyPath="PROCOST_code"/>
+<PropertyValue Property="ValueListProperty" String="code"/>
+</Record>
+<Record Type="Common.ValueListParameterDisplayOnly">
+<PropertyValue Property="ValueListProperty" String="name"/>
+</Record>
+</Collection>
+</PropertyValue>
+</Record>
+</Annotation>
+<Annotation Term="Core.Description" String="Currency code as specified by ISO 4217"/>
+</Annotations>
+<Annotations Target="Nautical.VOYAG_APPR/VREQNO">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.CHARTREQ/CHRNMEX">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.ZCHAT_VEN/CHRNMIN">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.VEND_BID/CVALUE">
+<Annotation Term="Common.Label" String="Currency"/>
+<Annotation Term="Core.Description" String="Currency code as specified by ISO 4217"/>
+</Annotations>
+<Annotations Target="Nautical.VEND_BID/CVALUE_code">
+<Annotation Term="Common.Label" String="Currency"/>
+<Annotation Term="Common.ValueList">
+<Record Type="Common.ValueListType">
+<PropertyValue Property="Label" String="Currency"/>
+<PropertyValue Property="CollectionPath" String="Currencies"/>
+<PropertyValue Property="Parameters">
+<Collection>
+<Record Type="Common.ValueListParameterInOut">
+<PropertyValue Property="LocalDataProperty" PropertyPath="CVALUE_code"/>
+<PropertyValue Property="ValueListProperty" String="code"/>
+</Record>
+<Record Type="Common.ValueListParameterDisplayOnly">
+<PropertyValue Property="ValueListProperty" String="name"/>
+</Record>
+</Collection>
+</PropertyValue>
+</Record>
+</Annotation>
+<Annotation Term="Core.Description" String="Currency code as specified by ISO 4217"/>
+</Annotations>
+<Annotations Target="Nautical.VEND_BID/CUNIT">
+<Annotation Term="Common.Label" String="Currency"/>
+<Annotation Term="Core.Description" String="Currency code as specified by ISO 4217"/>
+</Annotations>
+<Annotations Target="Nautical.VEND_BID/CUNIT_code">
+<Annotation Term="Common.Label" String="Currency"/>
+<Annotation Term="Common.ValueList">
+<Record Type="Common.ValueListType">
+<PropertyValue Property="Label" String="Currency"/>
+<PropertyValue Property="CollectionPath" String="Currencies"/>
+<PropertyValue Property="Parameters">
+<Collection>
+<Record Type="Common.ValueListParameterInOut">
+<PropertyValue Property="LocalDataProperty" PropertyPath="CUNIT_code"/>
+<PropertyValue Property="ValueListProperty" String="code"/>
+</Record>
+<Record Type="Common.ValueListParameterDisplayOnly">
+<PropertyValue Property="ValueListProperty" String="name"/>
+</Record>
+</Collection>
+</PropertyValue>
+</Record>
+</Annotation>
+<Annotation Term="Core.Description" String="Currency code as specified by ISO 4217"/>
+</Annotations>
+<Annotations Target="Nautical.VEND_BID/CHARNMIN">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.BID_SCORE/CHRNMIN">
+<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+</Annotations>
+<Annotations Target="Nautical.BID_SCORE/WTAGE">
+<Annotation Term="Common.Label" String="Currency"/>
+<Annotation Term="Core.Description" String="Currency code as specified by ISO 4217"/>
+</Annotations>
+<Annotations Target="Nautical.BID_SCORE/WTAGE_code">
+<Annotation Term="Common.Label" String="Currency"/>
+<Annotation Term="Common.ValueList">
+<Record Type="Common.ValueListType">
+<PropertyValue Property="Label" String="Currency"/>
+<PropertyValue Property="CollectionPath" String="Currencies"/>
+<PropertyValue Property="Parameters">
+<Collection>
+<Record Type="Common.ValueListParameterInOut">
+<PropertyValue Property="LocalDataProperty" PropertyPath="WTAGE_code"/>
+<PropertyValue Property="ValueListProperty" String="code"/>
+</Record>
+<Record Type="Common.ValueListParameterDisplayOnly">
+<PropertyValue Property="ValueListProperty" String="name"/>
+</Record>
+</Collection>
+</PropertyValue>
+</Record>
+</Annotation>
+<Annotation Term="Core.Description" String="Currency code as specified by ISO 4217"/>
+</Annotations>
+<Annotations Target="Nautical.VEND_FBID/CVALUE">
+<Annotation Term="Common.Label" String="Currency"/>
+<Annotation Term="Core.Description" String="Currency code as specified by ISO 4217"/>
+</Annotations>
+<Annotations Target="Nautical.VEND_FBID/CVALUE_code">
+<Annotation Term="Common.Label" String="Currency"/>
+<Annotation Term="Common.ValueList">
+<Record Type="Common.ValueListType">
+<PropertyValue Property="Label" String="Currency"/>
+<PropertyValue Property="CollectionPath" String="Currencies"/>
+<PropertyValue Property="Parameters">
+<Collection>
+<Record Type="Common.ValueListParameterInOut">
+<PropertyValue Property="LocalDataProperty" PropertyPath="CVALUE_code"/>
+<PropertyValue Property="ValueListProperty" String="code"/>
+</Record>
+<Record Type="Common.ValueListParameterDisplayOnly">
+<PropertyValue Property="ValueListProperty" String="name"/>
+</Record>
+</Collection>
+</PropertyValue>
+</Record>
+</Annotation>
+<Annotation Term="Core.Description" String="Currency code as specified by ISO 4217"/>
+</Annotations>
+<Annotations Target="Nautical.VEND_FBID/CUNIT">
+<Annotation Term="Common.Label" String="Currency"/>
+<Annotation Term="Core.Description" String="Currency code as specified by ISO 4217"/>
+</Annotations>
+<Annotations Target="Nautical.VEND_FBID/CUNIT_code">
+<Annotation Term="Common.Label" String="Currency"/>
+<Annotation Term="Common.ValueList">
+<Record Type="Common.ValueListType">
+<PropertyValue Property="Label" String="Currency"/>
+<PropertyValue Property="CollectionPath" String="Currencies"/>
+<PropertyValue Property="Parameters">
+<Collection>
+<Record Type="Common.ValueListParameterInOut">
+<PropertyValue Property="LocalDataProperty" PropertyPath="CUNIT_code"/>
+<PropertyValue Property="ValueListProperty" String="code"/>
+</Record>
+<Record Type="Common.ValueListParameterDisplayOnly">
+<PropertyValue Property="ValueListProperty" String="name"/>
+</Record>
+</Collection>
+</PropertyValue>
+</Record>
+</Annotation>
+<Annotation Term="Core.Description" String="Currency code as specified by ISO 4217"/>
+</Annotations>
+<Annotations Target="Nautical.ZPORT/COUNTRY">
+<Annotation Term="Common.Label" String="Country/Region"/>
+<Annotation Term="Core.Description" String="Country/region code as specified by ISO 3166-1"/>
+</Annotations>
+<Annotations Target="Nautical.ZPORT/COUNTRY_code">
+<Annotation Term="Common.Label" String="Country/Region"/>
+<Annotation Term="Common.ValueList">
+<Record Type="Common.ValueListType">
+<PropertyValue Property="Label" String="Country/Region"/>
+<PropertyValue Property="CollectionPath" String="Countries"/>
+<PropertyValue Property="Parameters">
+<Collection>
+<Record Type="Common.ValueListParameterInOut">
+<PropertyValue Property="LocalDataProperty" PropertyPath="COUNTRY_code"/>
+<PropertyValue Property="ValueListProperty" String="code"/>
+</Record>
+<Record Type="Common.ValueListParameterDisplayOnly">
+<PropertyValue Property="ValueListProperty" String="name"/>
+</Record>
+</Collection>
+</PropertyValue>
+</Record>
+</Annotation>
+<Annotation Term="Core.Description" String="Country/region code as specified by ISO 3166-1"/>
+</Annotations>
+<Annotations Target="Nautical.ZPORT/COUNTRYN">
+<Annotation Term="Common.Label" String="Country/Region"/>
+<Annotation Term="Core.Description" String="Country/region code as specified by ISO 3166-1"/>
+</Annotations>
+<Annotations Target="Nautical.ZPORT/COUNTRYN_code">
+<Annotation Term="Common.Label" String="Country/Region"/>
+<Annotation Term="Common.ValueList">
+<Record Type="Common.ValueListType">
+<PropertyValue Property="Label" String="Country/Region"/>
+<PropertyValue Property="CollectionPath" String="Countries"/>
+<PropertyValue Property="Parameters">
+<Collection>
+<Record Type="Common.ValueListParameterInOut">
+<PropertyValue Property="LocalDataProperty" PropertyPath="COUNTRYN_code"/>
+<PropertyValue Property="ValueListProperty" String="code"/>
+</Record>
+<Record Type="Common.ValueListParameterDisplayOnly">
+<PropertyValue Property="ValueListProperty" String="name"/>
+</Record>
+</Collection>
+</PropertyValue>
+</Record>
+</Annotation>
+<Annotation Term="Core.Description" String="Country/region code as specified by ISO 3166-1"/>
+</Annotations>
+<Annotations Target="Nautical.Newtable/ID">
+<Annotation Term="Core.Computed" Bool="true"/>
+<Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+</Annotations>
+<Annotations Target="Nautical.Languages">
+<Annotation Term="UI.Identification">
+<Collection>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="name"/>
+</Record>
+</Collection>
+</Annotation>
+</Annotations>
+<Annotations Target="Nautical.Languages/name">
+<Annotation Term="Common.Label" String="Name"/>
+</Annotations>
+<Annotations Target="Nautical.Languages/descr">
+<Annotation Term="Common.Label" String="Description"/>
+</Annotations>
+<Annotations Target="Nautical.Languages/code">
+<Annotation Term="Common.Text" Path="name"/>
+<Annotation Term="Common.Label" String="Language Code"/>
+</Annotations>
+<Annotations Target="Nautical.Currencies">
+<Annotation Term="UI.Identification">
+<Collection>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="name"/>
+</Record>
+</Collection>
+</Annotation>
+</Annotations>
+<Annotations Target="Nautical.Currencies/name">
+<Annotation Term="Common.Label" String="Name"/>
+</Annotations>
+<Annotations Target="Nautical.Currencies/descr">
+<Annotation Term="Common.Label" String="Description"/>
+</Annotations>
+<Annotations Target="Nautical.Currencies/code">
+<Annotation Term="Common.Text" Path="name"/>
+<Annotation Term="Common.Label" String="Currency Code"/>
+</Annotations>
+<Annotations Target="Nautical.Currencies/symbol">
+<Annotation Term="Common.Label" String="Currency Symbol"/>
+</Annotations>
+<Annotations Target="Nautical.Currencies/minorUnit">
+<Annotation Term="Common.Label" String="Currency Minor Unit Fractions"/>
+</Annotations>
+<Annotations Target="Nautical.Countries">
+<Annotation Term="UI.Identification">
+<Collection>
+<Record Type="UI.DataField">
+<PropertyValue Property="Value" Path="name"/>
+</Record>
+</Collection>
+</Annotation>
+</Annotations>
+<Annotations Target="Nautical.Countries/name">
+<Annotation Term="Common.Label" String="Name"/>
+</Annotations>
+<Annotations Target="Nautical.Countries/descr">
+<Annotation Term="Common.Label" String="Description"/>
+</Annotations>
+<Annotations Target="Nautical.Countries/code">
+<Annotation Term="Common.Text" Path="name"/>
+<Annotation Term="Common.Label" String="Country/Region Code"/>
+</Annotations>
+<Annotations Target="Nautical.Languages_texts/locale">
+<Annotation Term="Common.Label" String="Language Code"/>
+</Annotations>
+<Annotations Target="Nautical.Languages_texts/name">
+<Annotation Term="Common.Label" String="Name"/>
+</Annotations>
+<Annotations Target="Nautical.Languages_texts/descr">
+<Annotation Term="Common.Label" String="Description"/>
+</Annotations>
+<Annotations Target="Nautical.Languages_texts/code">
+<Annotation Term="Common.Text" Path="name"/>
+<Annotation Term="Common.Label" String="Language Code"/>
+</Annotations>
+<Annotations Target="Nautical.Currencies_texts/locale">
+<Annotation Term="Common.Label" String="Language Code"/>
+</Annotations>
+<Annotations Target="Nautical.Currencies_texts/name">
+<Annotation Term="Common.Label" String="Name"/>
+</Annotations>
+<Annotations Target="Nautical.Currencies_texts/descr">
+<Annotation Term="Common.Label" String="Description"/>
+</Annotations>
+<Annotations Target="Nautical.Currencies_texts/code">
+<Annotation Term="Common.Text" Path="name"/>
+<Annotation Term="Common.Label" String="Currency Code"/>
+</Annotations>
+<Annotations Target="Nautical.Countries_texts/locale">
+<Annotation Term="Common.Label" String="Language Code"/>
+</Annotations>
+<Annotations Target="Nautical.Countries_texts/name">
+<Annotation Term="Common.Label" String="Name"/>
+</Annotations>
+<Annotations Target="Nautical.Countries_texts/descr">
+<Annotation Term="Common.Label" String="Description"/>
+</Annotations>
+<Annotations Target="Nautical.Countries_texts/code">
+<Annotation Term="Common.Text" Path="name"/>
+<Annotation Term="Common.Label" String="Country/Region Code"/>
+</Annotations>
+</Schema>
+</edmx:DataServices>
 </edmx:Edmx>

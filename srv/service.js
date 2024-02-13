@@ -24,7 +24,12 @@ module.exports = cds.service.impl(async function (srv) {
       srv.on('READ', 'VoyTypeSet', req => NAUTINAUTICALCV_SRV.run(req.query));
       srv.on('READ', 'ZCalculateSet', req => NAUTINAUTICALCV_SRV.run(req.query));
 
-      srv.on('READ', 'BidTypeSet', req => NAUTINAUTICALCV_SRV.run(req.query)); 
+      srv.on('READ', 'BidTypeSet', req => NAUTINAUTICALCV_SRV.run(req.query));
+      
+      
+      const NAUTIVENDOR_BTP_SRV = await cds.connect.to("NAUTIVENDOR_BTP_SRV"); 
+      srv.on('READ', 'xNAUTIxvend_btp', req => NAUTIVENDOR_BTP_SRV.run(req.query)); 
+
 
       try {
         srv.before('CREATE', 'NAVOYGH', async (req,res) => {

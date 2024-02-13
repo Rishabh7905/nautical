@@ -17,6 +17,7 @@ using ZBTP_NAUTI_VOY_DOC_UPD_CDS from './external/ZBTP_NAUTI_VOY_DOC_UPD_CDS.cds
 using ZBTP_NAUTICAL_MARIDISTANCE_CDS from './external/ZBTP_NAUTICAL_MARIDISTANCE_CDS.cds';
 using NAUTINAUTICALCV_SRV  from './external/NAUTINAUTICALCV_SRV.cds';
 using {NAUTI_VENDOR} from '../db/vendor_data_syncing';
+using NAUTIVENDOR_BTP_SRV from './external/NAUTIVENDOR_BTP_SRV.cds';
 
 
 service Nautical{
@@ -69,6 +70,8 @@ service Nautical{
 entity ZBTP_NAUTICAL_MariDistance as projection on ZBTP_NAUTICAL_MARIDISTANCE_CDS.ZBTP_NAUTICAL_MariDistance
     {         from_port,  to_port,  distance     }    
 ;
-
+ entity xNAUTIxvend_btp as projection on NAUTIVENDOR_BTP_SRV.xNAUTIxvend_btp
+    {        key Lifnr, Land1, Name1, Name2, Name3, Name4, Ort01, Ort02, Pfach, Pstl2, Pstlz, Sortl, Stras, Adrnr, Mcod1, Mcod2, Mcod3, Anred, Bahns, Bbbnr, Bbsnr, Begru, Brsch, Bubkz, Datlt, Dtams, Dtaws, Erdat, Ernam, Esrnr, Konzs, Ktokk, Kunnr, Lnrza, Loevm, Sperr, Sperm, Spras, Stcd1, Stcd2, Stkza, Stkzu, Telbx, Telf1, Telf2, Telfx, Teltx, Telx1, Xcpdk, Xzemp, Vbund, Fiskn, Stceg, Stkzn, Sperq, Gbort, Gbdat, Sexkz, Kraus, Revdb, Qssys, Ktock, Pfort, Werks, Ltsna, Werkr, Plkal, Duefl, Txjcd, Sperz, Scacd, Sfrgr, Lzone, Xlfza, Dlgrp, Fityp, Stcdt, Regss, Actss, Stcd3, Stcd4, Stcd5, Ipisp, Taxbs, Profs, Stgdl, Emnfr, Lfurl, J1kfrepre, J1kftbus, J1kftind, Confs, Updat, Uptim, Nodel, Qssysdat, Podkzb, Fisku, Stenr, CarrierConf, MinComp, TermLi, CrcNum, CvpXblck, Rg, Exp, Uf, Rgdate, Ric, Rne, Rnedate, Cnae, Legalnat, Crtn, Icmstaxpay, Indtyp, Tdt, Comsize, Decregpc, Lfa1EewSupp, JScCapital, JScCurrency, Alc, PmtOffice, PpaRelevant, Psofg, Psois, Pson1, Pson2, Pson3, Psovn, Psotl, Psohs, Psost, BorgrDatun, BorgrYeaun, Addr2Street, Addr2HouseNum, Addr2Post, Addr2City, Addr2Country, Categ, PartnerName, PartnerUtr, Status, Vfnum, Vfnid, Crn, J1iexcd, J1iexrn, J1iexrg, J1iexdi, J1iexco, J1icstno, J1ilstno, J1ipanno, J1iexcive, J1issist, J1ivtyp, J1ivencre, Aedat, Usnam, J1isern, J1ipanref, J1ipanvaldt, J1iCustoms, J1idedref, VenClass, EntyCd, ResCntry, ResRegion, Ccode, Entpub, Escrit, Dvalss, Frmcss, Codcae, Ausdiv, TransportChain, StagingTime, SchedulingType, SubmiRelevant     }    
+;
        
 }

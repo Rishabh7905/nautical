@@ -1,0 +1,1 @@
+using NAUTIVENDOR_BTP_SRV as service from '../../srv/external/NAUTIVENDOR_BTP_SRV';

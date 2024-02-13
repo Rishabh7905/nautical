@@ -151,9 +151,9 @@
                     <End EntitySet="GtPlanSet" Role="ToRole_ZCreatePlanAsso"/>
                 </AssociationSet>
             </EntityContainer>
-            <atom:link rel="self" href="http://myodataservice:7001/sap/opu/odata/nauti/NAUTICALCV_SRV/$metadata"
+            <atom:link rel="self" href="http://35.185.33.183:8001/sap/opu/odata/nauti/NAUTICALCV_SRV/$metadata"
                 xmlns:atom="http://www.w3.org/2005/Atom"/>
-                <atom:link rel="latest-version" href="http://myodataservice:7001/sap/opu/odata/nauti/NAUTICALCV_SRV/$metadata"
+                <atom:link rel="latest-version" href="http://35.185.33.183:8001/sap/opu/odata/nauti/NAUTICALCV_SRV/$metadata"
                     xmlns:atom="http://www.w3.org/2005/Atom"/>
                 </Schema>
             </edmx:DataServices>
