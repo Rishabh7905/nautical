@@ -18,11 +18,6 @@ sap.ui.define(
         let selectedData = [];
         return BaseController.extend("nauticalfe.controller.VendorDataSyncing", {
             _oMenuFragment: null,
-           
-            
-
-
-
             onInit() {
                 var oModel = new JSONModel();
             this.getView().setModel(oModel, "vendorModel");
