@@ -75,7 +75,7 @@
                 <SearchField id="searchField2" width="60%" search=".onFilterPosts" />
             </HBox>
        <!-- //table change      -->
-        <Table id="synctable"  visible="false" items="{/xNAUTIxvend_btp}">
+        <Table id="synctable"  visible="False" items="{}">
           <columns>
            <Column id="heading1" >
              <Text id="text1" text="Vendor No"/>

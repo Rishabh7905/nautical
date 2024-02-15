@@ -1,3 +1,4 @@
+
 sap.ui.define(
   [
     "sap/ui/core/mvc/Controller",
@@ -11,7 +12,7 @@ sap.ui.define(
 
     let selectedData = [];
     let sSelectedIds = [];
-    let sSelectedTableId;
+    let VendorNo  =0;
     return BaseController.extend("nauticalfe.controller.BPMasterDetails", {
       onInit() {
       },
@@ -48,12 +49,15 @@ sap.ui.define(
         const oRouter = this.getOwnerComponent().getRouter();
         oRouter.navTo("RouteSaveAsVariant");
       },
-      onExecute: function () {
-        const oRouter = this.getOwnerComponent().getRouter();
-        oRouter.navTo("RouteDisplayVendorDetail");
-      
+      onExecute: function () { 
+        console.log("clicked ");
+      const oRouter = this.getOwnerComponent().getRouter();
+      oRouter.navTo("RouteDisplayVendorDetail", {
+        "SelectedVendorNo": VendorNo
+      });
     },
 
+   
 
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       showBPMasterDialog: function (oEvent) {
@@ -85,7 +89,7 @@ sap.ui.define(
               }),
               new sap.m.Table({
                 mode: sap.m.ListMode.MultiSelect,
-                selectionChange:this.onChange,
+              
                 columns: [
                   new sap.m.Column({
                     header: new sap.m.Text({ text: "vendor no " }),
@@ -147,6 +151,7 @@ sap.ui.define(
               var oSelectedValue = oSelectedItem.getCells()[0].getText(); // Assuming vendor no is in the first column
               var buttonVendorIdNo = this.getView().byId("vendorIdNo");
               buttonVendorIdNo.setText(oSelectedValue); // Set the vendor number to the button text
+             
               oDialog.close();
           }.bind(this),
           }),
@@ -155,7 +160,7 @@ sap.ui.define(
             text: "Ok",
             type: "Accept",
             press: function () {
-              debugger;
+          
               var oTable = oDialog.getContent()[0].getItems()[1];
               var oSelectedItem = oTable.getSelectedItem();
 
@@ -165,6 +170,7 @@ sap.ui.define(
                 var inputField = this.getView().byId("BpMasterVendor");
                 // Set its value to the selected ID
                 inputField.setValue(oSelectedValue);
+                VendorNo = oSelectedValue
                 // Close the dialog
                 oDialog.close();
             } else {
@@ -183,13 +189,12 @@ sap.ui.define(
             new sap.m.Button({
                 text: "Delete",
                 type: "Reject",
-                press: this.deleteSelectedRows.bind(this),
-                
+                press: function (){
+                  oDialog.close();
+                }
             })
         ]
         });
-        
-
         let oValueHelpTable = oDialog.getContent()[0].getItems()[1];
         oValueHelpTable.bindItems({
           path: "/Newtable",
@@ -223,63 +228,6 @@ sap.ui.define(
         // Open the dialog
         oDialog.open();
       },
-      onChange: function(oEvent) {
-        let oSource = oEvent.getSource();
-        selectedData = oSource.getSelectedItems();
-        console.log(selectedData);
-        
-        sSelectedIds = selectedData.map(function(oSelectedItem) {
-            return oSelectedItem.getId(); // Assuming IDs are stored as the item IDs
-        });
-        sSelectedTableId = oSource.getId();
-    
-        // Call deleteSelectedRows with the selected IDs
-        
-    }, 
-    deleteSelectedRows: function(aSelecteditems) {
-        // let oTable = this.getView().byId(sSelectedTableId); // Replace "yourTableId" with the actual ID of your table
-    
-        // sSelectedIds.forEach(function(sSelectedId) {
-        //     let oSelectedItem = sap.ui.getCore().byId(sSelectedId);
-        //     if (oSelectedItem) {
-        //         oTable.removeItem(oSelectedItem); // Remove the selected item from the table
-        aSelectedItems.forEach(function(oSelectedItem) {
-          let oParentAggregation = oSelectedItem.getParent();
-          if (oParentAggregation) {
-              oParentAggregation.removeItem(oSelectedItem);
-              
-            }
-        });
-    
-    },
-      deleteSelectedRows1: function (oEvent) {
-        var oTable = oEvent.getSource(); // Assuming the event source is the table
-        var oModel = oTable.getModel(); // Assuming the table is bound to a model
-    
-        var aSelectedIndices = oTable.getSelectedItem();
-        var aContextsToDelete = [];
-    
-        // Retrieve the contexts of selected items
-        aSelectedIndices.forEach(function (nIndex) {
-            var oContext = oTable.getContextByIndex(nIndex);
-            aContextsToDelete.push(oContext);
-        });
-    
-        // Remove selected items from the model
-        aContextsToDelete.forEach(function (oContext) {
-            oModel.remove(oContext.getPath(), {
-                success: function () {
-                    // Item removed successfully
-                },
-                error: function (oError) {
-                    // Handle error while removing item
-                    console.error("Error while deleting item:", oError);
-                }
-            });
-        });
-    
-        oTable.removeSelections();
-    }
     });
   }
-);
+)

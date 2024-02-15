@@ -494,7 +494,7 @@
     },
     {
         "name": "RouteDisplayVendorDetail",
-        "pattern": "DisplayVendorDetail",
+        "pattern": "DisplayVendorDetail/{SelectedVendorNo}",
         "target": [
             "TargetDisplayVendorDetail"
         ]

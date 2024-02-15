@@ -125,7 +125,7 @@ sap.ui.define(
                     "HOUSE_NUM1": "456"
                 };
                 // var updateSync = JSON.parse(jsonString);
-                console.log(updateSync);
+                
                 console.log("UpdateSync ", updateSync);
                 var updateSynModel = new JSONModel();
                 updateSynModel.setData(updateSync);
@@ -133,7 +133,7 @@ sap.ui.define(
                 let oData = this.getView().getModel('nomination').getData()
                 let salesModel = this.getOwnerComponent().getModel()
                 let oBindList = salesModel.bindList("/Newtable");
-                // debugger
+                debugger
                 // oBindList.create(oData);
                 oBindList.create(oData, {
                     success: function (msg) {
@@ -157,7 +157,7 @@ sap.ui.define(
                     this.getView().byId("synctable").setVisible(true)
                     let oTable = this.getView().byId("synctable");
 
-                    let oFilter = new Filter("LIFNR", FilterOperator.Contains, selecteVendorNo);
+                    let oFilter = new Filter("Lifnr", FilterOperator.Contains, selecteVendorNo);console.log(oFilter);
                     oTable.getBinding("items").filter(oFilter, FilterType.Application);
                 }
             },
@@ -430,7 +430,7 @@ sap.ui.define(
                                 selectedData.push(oSelectedItem.getCells()[14].getText());
                                 selectedData.push(oSelectedItem.getCells()[15].getText());
 
-                                console.log(selectedData);
+                                console.log(selectedData.getData());
                                 var inputVoyageType = this.getView().byId(oData.getId()); // Input field for Voyage Type
                                 this.populateInputField(inputVoyageType, oSelectedValue);
                                 var button1Input = this.getView().byId("button1");

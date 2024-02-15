@@ -65,71 +65,10 @@
         </contentRight>
     </Bar>
      
- <ObjectHeader id="_IDGenObjectHeader1" title="Dashboard Detail"> 
+ <!-- <ObjectHeader id="_IDGenObjectHeader1" title="Dashboard Detail"> 
    
    </ObjectHeader>
-    <ObjectHeader id="_IDGenObjectHeader2" title="Standerd Detail"/> 
-
-
-    		<!-- <smartForm:SmartForm id="smartForm"
-			
-			editTogglable="true" editToggled="handleEditToggled"
-			validationMode="Async"
-			title="{Name}">
-            	<smartForm:Group id="_IDGenGroup1" label="Dashboard Detail">
-				<smartForm:GroupElement id="_IDGenGroupElement1">
-					<smartField:SmartField id="_IDGenSmartField1" value="{ProductId}" />
-				</smartForm:GroupElement>
-				<smartForm:GroupElement id="_IDGenGroupElement2" label="Vendor">
-					<smartField:SmartField id="_IDGenSmartField2" text="Input" value="{Name}" />
-				</smartForm:GroupElement>
-				
-					
-						
-				
-				<smartForm:GroupElement id="_IDGenGroupElement4">
-					<smartField:SmartField id="_IDGenSmartField4" value="{Description}"  visible="{path: 'test>/visible'}"/>
-				</smartForm:GroupElement>
-				<smartForm:GroupElement id="_IDGenGroupElement5">
-					<smartField:SmartField id="_IDGenSmartField5" value="{Price}" />
-				</smartForm:GroupElement>
-			</smartForm:Group>
-			<smartForm:Group id="_IDGenGroup2" label="Address Detail"  label="">
-            <smartForm:Group 
-               
-			
-			</smartForm:Group>
-			<smartForm:Group id="_IDGenGroup3" label="Stock">
-				<smartForm:GroupElement id="_IDGenGroupElement7">
-					<smartField:SmartField id="_IDGenSmartField7" value="{Status}" />
-				</smartForm:GroupElement>
-				<smartForm:GroupElement id="_IDGenGroupElement8">
-					<smartField:SmartField id="_IDGenSmartField8" value="{Quantity}" />
-				</smartForm:GroupElement>
-			</smartForm:Group>
-			<smartForm:Group id="_IDGenGroup4" label="Standerd Address ">
-				<smartForm:GroupElement id="_IDGenGroupElement9">
-					<smartField:SmartField id="_IDGenSmartField9" value="{Width}" />
-				</smartForm:GroupElement>
-				<smartForm:GroupElement id="_IDGenGroupElement10">
-					<smartField:SmartField id="_IDGenSmartField10" value="{Depth}" />
-				</smartForm:GroupElement>
-				<smartForm:GroupElement id="_IDGenGroupElement11">
-					<smartField:SmartField id="_IDGenSmartField11" value="{Height}" />
-				</smartForm:GroupElement>
-				<smartForm:GroupElement id="_IDGenGroupElement12">
-					<smartField:SmartField id="_IDGenSmartField12" value="{WeightMeasure}" />
-				</smartForm:GroupElement>
-				
-				
-			</smartForm:Group>
-			
-		</smartForm:SmartForm> -->
-
-
-
-
-
+    <ObjectHeader id="_IDGenObjectHeader2" title="Standerd Detail"/>  -->
 
     <Table id="synctable" >
         <columns>
