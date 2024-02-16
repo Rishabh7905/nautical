@@ -166,8 +166,8 @@ sap.ui.define(
                 let oData = oEvent.getSource();
                 var oDialog = new sap.m.Dialog({
                     title: "Select: Vessel Types",
-                    contentWidth: "60%",
-                    contentHeight: "60%",
+                    contentWidth: "70%",
+                    contentHeight: "70%",
                     content: new sap.m.VBox({
                         items: [
                             new sap.m.Panel({
