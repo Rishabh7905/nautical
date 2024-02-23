@@ -74,56 +74,7 @@
                
                 <SearchField id="searchField2" width="60%" search=".onFilterPosts" />
             </HBox>
-       <!-- //table change      -->
-        <Table id="synctable"  visible="False" items="{}">
-          <columns>
-           <Column id="heading1" >
-             <Text id="text1" text="Vendor No"/>
-           </Column>
-           <Column id="heading2" >
-             <Text id="text2" text="Title"/>
-           </Column>
-           
-           <Column id="heading4" >
-             <Text id="text4" text="Address"/>
-           </Column>
-           <Column id="heading5" >
-             <Text id="text5" text="Name1"/>
-           </Column>
-           <Column id="heading7" >
-             <Text id="text7" text="Name3"/>
-           </Column>
-           <Column id="heading8" >
-             <Text id="text8" text="Street"/>
-           </Column>
-           <Column id="heading9" >
-             <Text id="text9" text="Postal Code"/>
-           </Column>
-           <Column id="heading10" >
-             <Text id="text10" text="City"/>
-           </Column>
-           <Column id="heading11" >
-             <Text id="text11" text="Country"/>
-           </Column>
-            </columns>
- 
-          <items>
-           <ColumnListItem id="coloumnlist1">
-             <cells>
-              <Input  value ="{Lifnr}"/>
-              <Input  value ="{Land1}"/>
-              <Input  value ="{Ort01}"/>
-              <Input  value ="{NAME1}"/>
-              <Input  value ="{NAME3}"/>
-              <Input  value ="{STRAS}"/>
-              <Input  value ="{PSTLZ}"/>
-              <Input  value ="{ORT01}"/>
-              <Input  value ="{LAND1}"/>
-              <Input  value ="{REGIO}"/>
-             </cells>
-           </ColumnListItem>
-          </items>
-        </Table>
+      
 
             <footer>
                 <OverflowToolbar id="_IDGenOverflowToolbar1" design="Auto">

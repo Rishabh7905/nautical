@@ -70,7 +70,7 @@
    </ObjectHeader>
     <ObjectHeader id="_IDGenObjectHeader2" title="Standerd Detail"/>  -->
 
-    <Table id="synctable" >
+    <Table id="synctable1" items="{displaydataModel>/value}" >
         <columns>
             <Column id="heading1" >
                 <Text id="text1" text="Vendor No"/>
@@ -101,24 +101,44 @@
                 <Text id="text10" text="City"/>
             </Column>
             <Column id="heading11" >
-                <Text id="text11" text="Country"/>
+                <Text id="text11" text="Region"/>
+            </Column>
+            <Column id="heading12" >
+                <Text id="text12" text="Teliphone1"/>
+            </Column>
+            <Column id="heading13" >
+                <Text id="text13" text="Teliphone2"/>
+            </Column>
+            <Column id="heading14" >
+                <Text id="text14" text="FaxNo"/>
+            </Column>
+            <Column id="heading15" >
+                <Text id="text15" text="Creation Date"/>
+            </Column>
+            <Column id="heading16" >
+                <Text id="text16" text="Language"/>
             </Column>
         </columns>
 
             <items>
             <ColumnListItem id="coloumnlist1">
                 <cells>
-                <Input id="_IDGenInput1"  value =""/>
-                <Input id="_IDGenInput2"  value =""/>
-                <Input id="_IDGenInput3"  value =""/>
-                <Input id="_IDGenInput4"  value =""/>
-                <Input id="_IDGenInput5"  value =""/>
-                <Input id="_IDGenInput6"  value =""/>
-                <Input id="_IDGenInput7"  value =""/>
-                <Input id="_IDGenInput8"  value =""/>
-                <Input id="_IDGenInput9"  value =""/>
-                <Input id="_IDGenInput10"  value =""/>
-                <Input id="_IDGenInput11"  value =""/>
+                <Input id="_IDGenInput1"  value ="{displaydataModel>LIFNR}"/>
+                <Input id="_IDGenInput2"  value ="{displaydataModel>ANRED}"/>
+                <Input id="_IDGenInput3"  value ="{displaydataModel>ADRNR}"/>
+                <Input id="_IDGenInput4"  value ="{displaydataModel>NAME1}"/>
+                <Input id="_IDGenInput5"  value ="{displaydataModel>NAME2}"/>
+                <Input id="_IDGenInput6"  value ="{displaydataModel>NAME3}"/>
+                <Input id="_IDGenInput7"  value ="{displaydataModel>STRAS}"/>
+                <Input id="_IDGenInput8"  value ="{displaydataModel>PSTLZ}"/>
+                <Input id="_IDGenInput9"  value ="{displaydataModel>ORT01}"/>
+                <Input id="_IDGenInput10"  value ="{displaydataModel>LAND1}"/>
+                <Input id="_IDGenInput11"  value ="{displaydataModel>REGIO}"/>
+                 <Input id="_IDGenInput12"  value ="{displaydataModel>TELF1}"/>
+                  <Input id="_IDGenInput13"  value ="{displaydataModel>TELF2}"/>
+                   <Input id="_IDGenInput14"  value ="{displaydataModel>TELFX}"/>
+                    <Input id="_IDGenInput15"  value ="{displaydataModel>ERDAT}"/>
+                     <Input id="_IDGenInput16"  value ="{displaydataModel>SPRAS}"/>
                 </cells>
             </ColumnListItem>
             </items>

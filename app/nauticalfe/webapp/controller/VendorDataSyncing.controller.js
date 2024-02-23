@@ -20,9 +20,9 @@ sap.ui.define(
             _oMenuFragment: null,
             onInit() {
                 var oModel = new JSONModel();
-            this.getView().setModel(oModel, "vendorModel");
+                this.getView().setModel(oModel, "vendorModel");  
 
-            var oDataModel = new ODataModel({
+                var oDataModel = new ODataModel({
                 serviceUrl: "/NAUTIVENDOR_SRVSampleService", // Assuming this is the correct service URL
                 defaultBindingMode: sap.ui.model.BindingMode.TwoWay
             });
@@ -35,6 +35,17 @@ sap.ui.define(
                     console.error("Error fetching data:", oError);
                 }
             });
+
+            oDataModel.read("/VendorDataSet", {
+                success: function(oData) {
+                    oModel.setData(oData.results);
+                    oTable.setModel(oModel, "vendorModel"); // Set model to the table here
+                },
+                error: function(oError) {
+                    console.error("Error fetching data:", oError);
+                }
+            });
+
 
             },
             onPress: function () {
@@ -51,7 +62,7 @@ sap.ui.define(
                         return this._oMenuFragment;
                     }.bind(this));
                 } else {
-                    this._oMenuFragment.openBy(oButton);
+                    this._oMenuFragment.openBy(oButton);                                       
                 }
             },
             populateInputField: function (inputField, selectedValue) {
@@ -75,7 +86,7 @@ sap.ui.define(
                     oRouter.navTo("MastView", {}, true);
                 }
             },
-
+ 
             // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             showVendorNoDialog: function () { 
                 var oView = this.getView();
@@ -126,6 +137,10 @@ sap.ui.define(
                 };
                 // var updateSync = JSON.parse(jsonString);
                 
+                var oModel = this.getView().getModel("vendorModel");
+                console.log("Model Data:", oModel.getData());
+
+
                 console.log("UpdateSync ", updateSync);
                 var updateSynModel = new JSONModel();
                 updateSynModel.setData(updateSync);
@@ -153,12 +168,20 @@ sap.ui.define(
 
                 } 
                 else {
+
+                    console.log(selecteVendorNo);
+                    MessageToast.show("Vendor Data Saved Successfull.");
+
+
+
                     this.getView().byId("vendorBoxes").setVisible(false)
                     this.getView().byId("synctable").setVisible(true)
                     let oTable = this.getView().byId("synctable");
 
                     let oFilter = new Filter("Lifnr", FilterOperator.Contains, selecteVendorNo);console.log(oFilter);
                     oTable.getBinding("items").filter(oFilter, FilterType.Application);
+                    
+
                 }
             },
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
@@ -273,7 +296,7 @@ sap.ui.define(
                                 this.populateInputField(inputVoyageType, oSelectedValue);
                                 var button1Input = this.getView().byId("button1");
                                 this.populateInputField(button1Input, oSelectedValue);
-
+                                 
 
                             }
                             oDialog.close();
